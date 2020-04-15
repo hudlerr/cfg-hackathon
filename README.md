@@ -53,4 +53,10 @@ This is a project that intends to...
   
   `cd cfg-hackathon`
 
+  `npm install`
+
+  `npm run dev`
+
+  Navigate to http://localhost:7000
+
 For contribuing guidelines -> howtocontribute.md
