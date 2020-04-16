@@ -3,16 +3,45 @@ body{
     text-align: center;
     font-family: monospace, arial;
     font-size: 16px;
+    padding: 0px;
+    margin: 0px;
 }
 
-.header {
-    background-color: black;
-    color: whitesmoke;
+li, a {
+  font-family: monospace;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #CCD6EB;
+    align-items: center;
+    color: black;
     padding: 30px;
+    height: 10px;
+    font:black;
+}
+
+.nav_links{
+  list-style: none
+
+
+
+}
+
+.nav_links li{
+  display: inline-block;
+  padding: 0px 10px;
+
+
 }
 
 .logo {
-    text-align: left;
+    margin-right: auto;
+    width:50px;
 }
 
 .menu {
@@ -24,21 +53,33 @@ body{
 }
 
 .intro {
-    margin: 75px;
+    margin: 50px;
 }
 
 .choice{
-    margin: 30px;
+    margin: 50px;
     align-content: center;
     display: flex;
     justify-content: center;
+
+
 }
 
 .box{
     height: 60px;
     width: 60px;
     padding: 50px;
-    margin: 20px;
+    margin: 50px;
     border: 1px dotted black;
 }
 
+
+.intro p {
+color: black;
+}
+
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+}
