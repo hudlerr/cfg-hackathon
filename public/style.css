@@ -1,0 +1,44 @@
+body{
+    background-color: white;
+    text-align: center;
+    font-family: monospace, arial;
+    font-size: 16px;
+}
+
+.header {
+    background-color: black;
+    color: whitesmoke;
+    padding: 30px;
+}
+
+.logo {
+    text-align: left;
+}
+
+.menu {
+    text-align: right;
+}
+
+#tittle {
+    font-size: 4em;
+}
+
+.intro {
+    margin: 75px;
+}
+
+.choice{
+    margin: 30px;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+}
+
+.box{
+    height: 60px;
+    width: 60px;
+    padding: 50px;
+    margin: 20px;
+    border: 1px dotted black;
+}
+
