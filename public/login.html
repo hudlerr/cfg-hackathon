@@ -3,14 +3,53 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Close Hands</title>
-    <link rel="stylesheet" href="style.css">
+    <title>take-my-data</title>
+    <link rel="stylesheet" href="css/login.css">
     <script src="../app.js"></script>
 </head>
 
-<body>
-    <h1>Login Page</h1>
+<header class="header">
+    <img class="logo" src="https://cdn4.iconfinder.com/data/icons/need-a-helping-hand/60/hand-give-love-512.png"
+      alt="logo">
+    <nav>
+      <ul class="nav_links">
+        <li><a href="login.html">Log in</a></li>
+        <li><a href="create-user.html">Create account</a></li>
+      </ul>
+    </nav>
+</header>
 
+<body>
+    <form action="#" method="#">
+        <div class="welcome">
+            <h1>Welcome Back!</h1>
+            <img class="logimg" src="images/login.png" alt="img">
+            <h2>Login</h2>
+        </div> 
+        <div>
+            <div class="container">
+                <label for="uname">Username</label>
+                <input type="text" placeholder="Email Address" name="uname" required>
+                <br>
+                <label for="psw">Password</label>
+                <input type="password" placeholder="Password" name="psw" required>
+                <button type="submit">Login</button>
+                <br>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember">Remember me
+                </label>
+                <span class="psw"><a class="link" href="#">Forgot password?</a></span>
+            </div>
+            <br>
+            <div>
+                <span>Don't have an account yet? <a class="link" href="#">Sign Up</a></span>
+            </div>
+        </div>
+    </form>
 </body>
 
+<hr>
+<footer>
+    {} with &#x1F49B; by us.
+</footer>
 </html>
