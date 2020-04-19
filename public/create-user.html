@@ -4,13 +4,47 @@
 <head>
     <meta charset="utf-8">
     <title>Close Hands</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="../app.js"></script>
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="./server/signup.js"></script>
 </head>
 
-<body>
-    <h1>SignUp Page</h1>
+<header class="header">
+    <img class="logo" src="https://cdn4.iconfinder.com/data/icons/need-a-helping-hand/60/hand-give-love-512.png"
+      alt="logo">
+    <nav>
+      <ul class="nav_links">
+        <li><a href="login.html">Log in</a></li>
+        <li><a href="create-user.html">Create account</a></li>
+      </ul>
+    </nav>
+</header>
 
+<body>
+    <form action="#" method="post">
+        <h2>Sign Up Today</h2>
+        <img class="logimg" src="images/signup.png" alt="img">      
+        <hr>
+        <div class="container">
+            <label for="Email" class="floatLabel">Email</label>
+            <input class="Email" name="Email" type="text">
+            <br>
+            <label for="password" class="floatLabel">Password</label>
+            <input class="password" name="password" type="password">
+            <span>Enter a password longer than 8 characters</span>
+            <br>
+            <label for="confirm_password" class="floatLabel">Confirm Password</label>
+            <input class="confirm_password" name="confirm_password" type="password">
+            <span>Your passwords do not match</span>
+            <br>
+        </div>
+            <input type="submit" value="Create My Account" id="submit">
+        
+            
+    </form>
 </body>
 
+<hr>
+<footer>
+    {} with &#x1F49B; by us.
+</footer>
 </html>

@@ -57,12 +57,12 @@ header {
 }
 
 form {
-    background-color: #CCD6EB;
+    background-color: #DBE4EE;
     border-radius: 6px;
-    border-style: groove;
-    border-color: #309AA8;
-    margin: 20px;
-    padding: 10px;
+    box-shadow: 0 0 1em #222;
+    padding: 1em 1em 1em;
+    max-width: 540px;
+    margin: 30px auto 30px;
 }
 
 .container {
@@ -108,7 +108,6 @@ button:hover {
 
 .logimg {
     width: 50px;
-
 }
 
 span.psw {
@@ -118,8 +117,6 @@ span.psw {
   }
 
 .link {color: blue;}
-
-
 
 footer {
     background-color:transparent;
