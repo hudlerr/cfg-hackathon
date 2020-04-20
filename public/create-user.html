@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>Close Hands</title>
     <link rel="stylesheet" href="css/signup.css">
-    <script src="../server/signup.js" type="text/javascript"></script>
 </head>
 
 <header class="header">
@@ -20,44 +19,36 @@
 </header>
 
 <body>
-    <form action="#" method="post">
-      <div>
-        <h2>Sign Up Today</h2>
-        <img class="logimg" src="images/signup.png" alt="img">      
-        <hr>
-      </div>
-      <div>
-        <div class="container">
-          <p>
-            <label for="name">Full Name</label>
-            <input id="name" name="name" type="text" required>
-          </p>
-          <p>
-            <label for="Email">Email</label>
-            <input id="Email" name="Email" type="email" required>
-          </p>
-          <p>
-            <label for="phone">Phone Number</label>
-            <input id="phone" name="phone" type="tel" pattern="[0-9]{5}-[0-9]{6}" required>
-          </p>
-          <p>
-            <label for="address">Post Code</label>
-            <input id="postcode" name="postcode" type="text" required>
-          </p>
-          <p>
-            <label for="password">Password</label>
-            <input id="password" name="password" type="password" required>
-            <span>Enter a password longer than 8 characters</span>
-          </p>  
-           <p> 
-            <label for="confirm_password">Confirm Password</label>
-            <input id="confirm_password" name="confirm_password" type="password" required>
-            <span>Your passwords do not match</span>
-          </p>
-        </div>
-            <input type="submit" value="Create My Account" id="submit">
-      </div>      
+  <section class="section">
+    <h2>Sign Up Today</h2>
+    <img class="logimg" src="images/signup.png" alt="img">      
+    <hr>
+    <form action="#" method="post" validate>
+        <label for="name">Full Name:
+          <input id="name" name="name" type="text" required>
+        </label>
+        <label for="email">Email:
+          <input id="email" name="email" type="email" required>
+        </label>
+        <label for="phone">Phone Number:
+          <input id="phone" name="phone" type="tel" required pattern="[0-9]{11}">
+        </label>
+        <label for="address">Post Code:
+          <input id="postcode" name="postcode" type="text" required>
+        </label>
+        <label for="password">Password:
+          <input id="password" name="password" type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+          <!--<span>Enter a password longer than 8 characters</span>-->
+        </label>  
+        <label for="confirm_password">Confirm Password:
+          <input id="confirm_password" name="confirm_password" type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+          <!--<span>Your passwords do not match</span>-->
+        </label>
+        <p class="error" aria-live="polite"></p>
+        <input type="submit" value="Create My Account" id="submit">
     </form>
+  </section>
+  <script src="../server/signup.js" type="text/javascript"></script>
 </body>
 
 <hr>

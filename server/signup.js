@@ -1,53 +1,48 @@
-//Problem: Hints are shown even when form is valid
-//Solution: Hide and show them at appropriate times
-var $password = $("#password");
-var $confirmPassword = $("#confirm_password");
+var form = document.getElementsByTagName("form")[0];
+var email = document.getElementById("email");
+var email = document.getElementById("phone");
+var email = document.getElementById("postcode");
+var password = document.getElementById("password");
+var confirmPassword = document.getElementById("confirm_password");
+var error = document.querySelector(".error");
 
-//Hide hints
-$("form span").hide();
-
-function isPasswordValid() {
-  return $password.val().length > 8;
-}
-
-function arePasswordsMatching() {
-  return $password.val() === $confirmPassword.val();
-}
-
-function canSubmit() {
-  return isPasswordValid() && arePasswordsMatching();
-}
-
-function passwordEvent(){
-    //Find out if password is valid  
-    if(isPasswordValid()) {
-      //Hide hint if valid
-      $password.next().hide();
-    } else {
-      //else show hint
-      $password.next().show();
-    }
-}
-
-function confirmPasswordEvent() {
-  //Find out if password and confirmation match
-  if(arePasswordsMatching()) {
-    //Hide hint if match
-    $confirmPassword.next().hide();
-  } else {
-    //else show hint 
-    $confirmPassword.next().show();
+form.addEventListener("Submit", function(event) {
+  if (password.validity.valueMissing || confirmPassword.validity.valueMissing) {
+    error.innerText = "Please enter a password";
+    event.preventDefault();
   }
-}
 
-function enableSubmitEvent() {
-  $("#submit").prop("disabled", !canSubmit());
-}
+  if (password.validity.patternMismatch ||
+    confirmPassword.validity.patternMismatch
+  ) {
+    error.innerText =
+      "Password must contain at least eight characters, including one letter and one number";
+    event.preventDefault();
+  }
 
-//When event happens on password input
-$password.focus(passwordEvent).keyup(passwordEvent).keyup(confirmPasswordEvent).keyup(enableSubmitEvent);
+  if (password.value != confirmPassword.value) {
+    error.innerText = "Passwords do not match";
+    event.preventDefault();
+  }
 
-//When event happens on confirmation input
-$confirmPassword.focus(confirmPasswordEvent).keyup(confirmPasswordEvent).keyup(enableSubmitEvent);
+  if (email.validity.typeMismatch) {
+    error.innerText = "Please enter a valid email address";
+    event.preventDefault();
+  }
 
-enableSubmitEvent();
+  if (email.validity.valueMissing) {
+    error.innerText = "Please enter an email address";
+    event.preventDefault();
+  }
+
+  if (phone.validity.valueMissing) {
+    error.innerText = "Please enter a Phone Number";
+    event.preventDefault();
+  }
+
+  if (postcode.validity.valueMissing) {
+    error.innerText = "Please enter your Postcode";
+    event.preventDefault();
+  }
+
+});
