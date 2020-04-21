@@ -1,2 +1,0 @@
-/* 
-Code which controls functioning of app will live here */
