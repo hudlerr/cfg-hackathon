@@ -12,17 +12,8 @@
     <div id="maindiv">
         </p>Loading...</p>
     </div>
-    <!-- <script src="./js/main.js"></script> -->
-    <script type="text/javascript">
-        let url = "http://localhost:9000/neighbourhood";
-        fetch(url).then(response => response.json())
-            .then((result) => {
-                console.log('success:', result)
-                let div = document.getElementById('maindiv');
-                div.innerHTML = '<h3> My Neighbourhood - ' + result.ward + '</h3>';
-            })
-            .catch(error => console.log('error:', error));
-    </script>
+
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
