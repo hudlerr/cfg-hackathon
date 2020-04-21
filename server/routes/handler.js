@@ -6,6 +6,7 @@ const router = Router();
 const queries = require('./queries');
 
 let postcode; //global postcode var
+let wardname;
 
 //Handles route for dashboard
 router.get('/my-dashboard', function(request, response) {
@@ -19,9 +20,9 @@ router.get('/neighbourhood', function(request, response) {
     fetch(postcodeAPIURL)
         .then(response => response.json())
         .then(data => {
-            //data = JSON.parse(JSON.stringify(data));
-            console.log("passed on " + data.result['admin_ward']);
-            response.json({ ward: data.result['admin_ward'] });
+            wardname = data.result['admin_ward'];
+            response.writeHead(200, { 'Content-Type': 'application/json' });
+            response.end(JSON.stringify(wardname));
         })
         .catch(error => console.log('error:', error));
 });
