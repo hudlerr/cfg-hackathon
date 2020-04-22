@@ -17,44 +17,24 @@ a {
 }
 
 /*Nav bar*/
+.navbar{
+    min-height: 50px;
+}
+  
+.navbar-nav .nav-item .nav-link {
+      color:  #373737;
+      padding: 10px;
+      margin: 10px;
+      border: 1px #373737 ;
+}
 
-header {
-    display: flex;
-    justify-content: flex-end;
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover {
     background-color: #CCD6EB;
-    align-items: center;
-    color: black;
-    padding: 30px 100px 30px 100px;
-    height: 10px;
-    font: #373737;
-    box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
 }
 
-.nav_links {
-    list-style: none
-}
-
-.nav_links li {
-    display: inline-block;
-    padding: 10px;
-    margin: 10px;
-    border: 1px #373737;
-    border-radius: 10px;
-}
-
-.nav_links li:hover {
-    background-color: #DBE4EE;
-}
-
-.logo {
-    margin-right: auto;
-    width: 50px;
-    opacity: 0.8;
-}
-
-.menu {
-    text-align: right;
-}
+/*Form*/
 
 form {
     background-color: #DBE4EE;
@@ -67,6 +47,7 @@ form {
 
 .container {
     padding: 16px;
+    justify-content: center;
 }
 
 input[type=text] {
@@ -108,17 +89,64 @@ button:hover {
 
 .logimg {
     width: 50px;
+    justify-content: center;
 }
 
 span.psw {
     float: center;
     padding-top: 16px;
     padding-left: 220px;
-  }
+}
+
+.signup{
+    text-align: center;
+}
 
 .link {color: blue;}
 
-footer {
+
+/* first footer*/
+
+.graphic{
+    height: 30vw;
+    margin: 0px;
+  
+  }
+  
+.socialmediabuttons {
+    max-width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 3vw;
+}
+  
+.fa  {
+  padding: 20px;
+  font-size: 60px;
+  width: 80px;
+  text-align: center;
+  text-decoration: none;
+}
+  
+.fa-facebook {
+    color: #373737;
+}
+  
+.fa-instagram {
+    color: #373737;
+}
+  
+.fa-twitter {
+    color: #373737;
+}
+  
+.toggle {
+    color: black;
+}
+
+
+/*Footer 2*/
+.footer {
     background-color:transparent;
     text-align: center;
     padding: 10px;
