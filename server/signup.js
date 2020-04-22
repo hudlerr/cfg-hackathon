@@ -1,7 +1,7 @@
 var form = document.getElementsByTagName("form")[0];
 var email = document.getElementById("email");
-var email = document.getElementById("phone");
-var email = document.getElementById("postcode");
+var phone = document.getElementById("phone");
+var postcode = document.getElementById("postcode");
 var password = document.getElementById("password");
 var confirmPassword = document.getElementById("confirm_password");
 var error = document.querySelector(".error");
@@ -13,8 +13,7 @@ form.addEventListener("Submit", function(event) {
   }
 
   if (password.validity.patternMismatch ||
-    confirmPassword.validity.patternMismatch
-  ) {
+    confirmPassword.validity.patternMismatch) {
     error.innerText =
       "Password must contain at least eight characters, including one letter and one number";
     event.preventDefault();
