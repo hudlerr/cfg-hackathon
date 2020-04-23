@@ -115,9 +115,15 @@ td, th {
 
 }
 
-#description {
+textarea{
   height: 200px;
   width: 70%;
+  text-align: left;
+  padding-bottom: 180px;
+  overflow-wrap: break-word;
+
+
+
 }
 
 #task {
