@@ -4,13 +4,76 @@
 <head>
     <meta charset="utf-8">
     <title>Close Hands</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="../app.js"></script>
 </head>
 
-<body>
-    <h1>Login Page</h1>
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #DBE4EE;">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/closehands.png" width="70px" height="70px" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="create-user.html">Create account</a>
+            </li>
+          </ul>
+        </div>
+</header>
 
+<body>
+    <form action="#" method="#">
+        <div class="welcome">
+            <h1>Welcome Back!</h1>
+            <img class="logimg" src="images/login.png" alt="img">
+            <h2>Login</h2>
+        </div> 
+        <div>
+            <div class="container">
+                <label for="uname">Username</label>
+                <input type="text" placeholder="Email Address" name="uname" required>
+                <br>
+                <label for="psw">Password</label>
+                <input type="password" placeholder="Password" name="psw" required>
+                <button type="submit">Login</button>
+                <br>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember">Remember me
+                </label>
+                <span class="psw"><a class="link" href="#">Forgot password?</a></span>
+            </div>
+            <br>
+            <div class="signup">
+                <span>Don't have an account yet? <a class="link" href="#">Sign Up</a></span>
+            </div>
+        </div>
+    </form>
 </body>
 
+<footer>
+    <div class="socialmediabuttons">
+        <a href="#" class="fa fa-facebook" target="_blank"></a>
+        <a href="#" class="fa fa-twitter" target="_blank"></a>
+        <a href="#" class="fa fa-instagram" target="_blank"></a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</footer>
+
+<hr>
+<footer class="footer">
+    {} with &#x1F49B; by us.
+</footer>
 </html>
