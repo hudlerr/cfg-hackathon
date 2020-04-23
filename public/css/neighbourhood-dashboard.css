@@ -62,6 +62,10 @@ color:#373737;
 margin: 30px;
 }
 
+p{
+  padding: 5px;
+}
+
 /*postcode search*/
 
 form.example input[type=text] {
