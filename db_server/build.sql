@@ -8,7 +8,7 @@ CREATE TABLE users
     fullname char(300) NOT NULL,
     email varchar(300) NOT NULL,
     password varchar(300) NOT NULL,
-    phonenumber int NOT NULL,
+    phonenumber bigint NOT NULL,
     postcode varchar(300) NOT NULL
 );
 

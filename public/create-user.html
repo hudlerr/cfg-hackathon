@@ -11,44 +11,44 @@
 </head>
 
 <header class="header">
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #DBE4EE;">
-    <a class="navbar-brand" href="index.html">
-      <img src="images/closehands.png" width="70px" height="70px" alt="">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #DBE4EE;">
+        <a class="navbar-brand" href="/">
+            <img src="images/closehands.png" width="70px" height="70px" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="login.html">Log in</a>
-        </li>
-      </ul>
-    </div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Log in</a>
+                </li>
+            </ul>
+        </div>
 </header>
 
 <body>
-  <section class="section">
-    <h2>Sign Up Today</h2>
-    <img class="logimg" src="images/signup.png" alt="img">
-    <hr>
-    <form action="#" method="post" validate>
-        <label for="name">Full Name:
+    <section class="section">
+        <h2>Sign Up Today</h2>
+        <img class="logimg" src="images/signup.png" alt="img">
+        <hr>
+        <form class="postcode-form" action="/dashboard" method="post" validate>
+            <label for="name">Full Name:
           <input id="name" name="name" type="text" required>
         </label>
-        <label for="email">Email:
+            <label for="email">Email:
           <input id="email" name="email" type="email" required>
         </label>
-        <label for="phone">Phone Number:
+            <label for="phone">Phone Number:
           <input id="phone" name="phone" type="tel" required pattern="[0-9]{11}">
         </label>
-        <label for="address">Post Code:
-          <input id="postcode" name="postcode" type="text" required>
+            <label for="address">Post Code:
+          <input id="postcode" class="postcode-input" name="postcode" type="search" required>
         </label>
-        <label for="password">Password:
+            <label for="password">Password:
           <input id="password" name="password" type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
           <!--<span>Enter a password longer than 8 characters</span>-->
         </label>
@@ -77,6 +77,7 @@
 
 <hr>
 <footer class="footer">
-    {} with &#x1F49B; by us.
+    Made with &#x1F49B; by us.
 </footer>
+
 </html>
