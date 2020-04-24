@@ -157,9 +157,29 @@ h2 {
   margin: 70px 10px 10px 10px;
 }
 
-.posttask {
+#posttask {
   margin: 0px 0px 50px 0px;
 }
+
+label{
+display: block;
+margin-left: 360px;
+padding: 0px;
+width:12px;
+margin-bottom: 0px;
+font-size: 1.4vw;
+}
+
+textarea {
+  margin-top: -18px;
+}
+
+#task {
+
+margin-top: -25px;
+
+}
+
 
 .socialmediabuttons {
   max-width: 100%;
