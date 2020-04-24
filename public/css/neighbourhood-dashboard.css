@@ -52,18 +52,23 @@ h1 {
   font-size: 5vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  margin: 40px;
+  margin-top: 40px;
+  margin-bottom: 30px;
 
 }
 
+
 .intro {
-font-size: 2vw;
+
 color:#373737;
 margin: 30px;
+font-size: 2vw;
 }
 
 p{
   padding: 5px;
+  font-size: 1.2vw;
+
 }
 
 /*postcode search*/
@@ -103,7 +108,7 @@ form.example::after {
 
 
 table {
-  font-family: arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   border-collapse: collapse;
   width: 70%;
   margin-top: 50px;
@@ -121,10 +126,11 @@ td, th {
 
 textarea{
   height: 200px;
-  width: 70%;
+  width: 50%;
   text-align: left;
   padding-bottom: 180px;
   overflow-wrap: break-word;
+  font-family: 'Montserrat', sans-serif;
 
 
 
@@ -132,7 +138,7 @@ textarea{
 
 #task {
   height: 30px;
-  width: 70%;
+  width: 50%;
   margin: 10px;
   text-align: left;
 }
@@ -152,5 +158,34 @@ h2 {
 }
 
 .posttask {
-  margin: 0px 0px 100px 0px;
+  margin: 0px 0px 50px 0px;
+}
+
+.socialmediabuttons {
+  max-width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-size: 2vw;
+  margin-bottom: 30px;
+}
+
+
+
+.fa-facebook {
+  color: #373737;
+}
+
+.fa-instagram {
+  color: #373737;
+}
+
+
+.fa-twitter {
+  color: #373737;
+}
+
+footer {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3vw;
+
 }
