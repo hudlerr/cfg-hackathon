@@ -17,9 +17,9 @@ function updateDom(err, data) {
         console.error(err);
     } else {
         var neighbourhood = JSON.parse(data);
-        console.log("inside updateDom dashboard " + neighbourhood);
+        console.log("inside updateDom dashboard " + neighbourhood.wardname + neighbourhood.admindistrict);
         var table = document.getElementById('maindiv');
-        table.innerHTML = neighbourhood;
+        table.innerHTML = "My NeighbourHood " + neighbourhood.wardname + ' - ' + neighbourhood.admindistrict;
     }
 }
 
