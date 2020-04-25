@@ -9,7 +9,14 @@ const addNewUser = user => {
     );
 };
 
+const addNewTask = userDetails => {
+    const { ownerId, neighbourhoodId, titleContent, descriptionContent } = userDetails;
+    return dbConnection.query(
+        `INSERT INTO tasks(ownerId, neighbourhoodId, titleContent, descriptionContent) VALUES($1,$2,$3,$4)`, [ownerId, neighbourhoodId, titleContent, descriptionContent]
+    );
+}
+
 module.exports = {
     addNewUser,
-    //autheniticateUser
+    addNewTask
 }

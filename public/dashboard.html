@@ -48,54 +48,23 @@
     </div>
 
     <p> If you can help, click "I can help" and your contact details will be sent to the task owner who will get in touch with you directly.</p>
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>Task</th>
-            <th>Postcode</th>
-            <th>Status</th>
-        </tr>
-        <tr>
-            <td>input</td>
-            <td>input</td>
-            <td>input</td>
-            <td>input</td>
+    <form name="viewtasks" action="/view-task" method="get">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Task</th>
+                <th>Postcode</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>input</td>
+                <td>input</td>
+                <td>input</td>
+                <td>input</td>
 
-        </tr>
-        <tr>
-            <td>input</td>
-            <td>input</td>
-            <td>input</td>
-            <td>input</td>
-        </tr>
-        <tr>
-            <td>input</td>
-            <td>input</td>
-            <td>input</td>
-            <td>input</td>
-        </tr>
-        <tr>
-            <td>input</td>
-            <td>input</td>
-            <td>input</td>
-            <td>input</td>
-
-        </tr>
-        <tr>
-            <td>input</td>
-            <td>input</td>
-            <td>input</td>
-            <td>input</td>
-
-        </tr>
-        <tr>
-            <td>input</td>
-            <td>input</td>
-            <td>input</td>
-            <td>input</td>
-        </tr>
-
-    </table>
+            </tr>
+        </table>
+    </form>
 
     <h2> Or post a task. </h2>
 
@@ -103,7 +72,7 @@
         If you need help, post a task below.
     </div>
 
-    <form name="posttaskform" id="posttask" action="/action_page.php" onsubmit="return validateForm()" method="post">
+    <form name="posttaskform" id="posttask" action="/submit-task" onsubmit="return validateForm()" method="post">
         <label style="margin-bottom:-18px;" for="task">Task:</label><br>
         <input type="text" id="task" name="task"><br>
         <label for="description">Description:</label><br>
