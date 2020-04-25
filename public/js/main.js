@@ -16,10 +16,12 @@ function updateDom(err, data) {
     if (err) {
         console.error(err);
     } else {
-        var neighbourhood = JSON.parse(data);
-        console.log("inside updateDom dashboard " + neighbourhood.wardname + neighbourhood.admindistrict);
-        var table = document.getElementById('maindiv');
-        table.innerHTML = "My NeighbourHood " + neighbourhood.wardname + ' - ' + neighbourhood.admindistrict;
+        var userInfo = JSON.parse(data);
+        console.log("inside updateDom dashboard " + data);
+        var neighbourhood = document.getElementById('maindiv');
+        neighbourhood.innerHTML = "My NeighbourHood " + userInfo.wardname + ' - ' + userInfo.admindistrict;
+        var namediv = document.getElementById('hi-user');
+        namediv.innerHTML = 'Hello, ' + userInfo.user.fullname;
     }
 }
 

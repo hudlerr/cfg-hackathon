@@ -26,8 +26,9 @@ router.get('/neighbourhood', function(request, response) {
         .then(data => {
             const wardname = data.result['admin_ward'];
             const admindistrict = data.result['admin_district']
+            const user = request.session.loggedinUser;
             response.writeHead(200, { 'Content-Type': 'application/json' });
-            response.end(JSON.stringify(area = { wardname, admindistrict }));
+            response.end(JSON.stringify(area = { wardname, admindistrict, user }));
             console.log(area.wardname + area.admindistrict)
         })
         .catch(error => console.log('error:', error));
@@ -81,12 +82,11 @@ router.post('/authoriseuser', function(request, response) {
 router.get('/logout', function(req, res) {
     console.log('Destroying session');
     req.session.destroy();
-    res.end('/');
+    res.redirect('/');
 });
 
 //Handles the route for the login path
 router.get('/login', function(request, response) {
-
     response.sendFile(path.join(__dirname, '..', '..', 'public', 'login.html'));
 });
 
