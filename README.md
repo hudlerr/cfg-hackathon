@@ -1,6 +1,4 @@
-# Close Hands
-
-## What is Close Hands?
+## Close Hands
 Lets be helpful neighbours again!
 
  - - - -
@@ -16,19 +14,19 @@ Lets be helpful neighbours again!
 
 [ x ] As a user, I want to be placed in my correct neighbourhood group, so that I can interact with my neighbours
 
-[ ] As a user, I want to be able to view a list requests from my neighbour group, so that I can choose to interact
+[ x ] As a user, I want to be able to view a list requests from my neighbour group, so that I can choose to interact
 
-[ ] As a user, I want to be able to press a confirm button on a specific request, so as to pick up the request
-
-[ ] As a user, I want to be able to post a request, so that my neighbourhood is able to view it
+[ x ] As a user, I want to be able to post a request, so that my neighbourhood is able to view it
 
 [ x ] As a user, I want to be able to login/logout and see my profile and neighbourhood group
+
+[ ] As a user, I want to be able to press a confirm button on a specific request, so as to pick up the request
 
 [ ] As a user, I want to have a profile, so I can personalise my account
 
 [ ] As a user, I want to have a list of all my requests and responses, so I can keep track of my account
 
-[ ] As a user, I want to be able to press completed on a request when a neighbour has completed my task, so I can keep track tasks
+[ ] As a user, I want to be able to press 'completed' on a request when a neighbour has completed my task, so I can keep track tasks
 
  - - - -
 
