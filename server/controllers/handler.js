@@ -8,6 +8,23 @@ const postQueries = require('../queries/postQueries.js');
 const dbConnection = require('../../db_server/db_connection');
 
 
+//Handles routes for get tasks in dashboard.html
+router.get('/view-task', function(request, response) {
+    const postcode = request.session.loggedinUser.postcode;
+    dbConnection.query('SELECT * FROM tasks WHERE neighbourhoodId = $1', [postcode],
+        function(error, results) {
+            if (results.rows.length > 0) {
+                console.log(results.rows)
+                var tasks = results.rows;
+                response.writeHead(200, { 'Content-Type': 'application/json' });
+                response.end(JSON.stringify(tasks));
+            } else {
+                //TODO: this should be done client side
+                console.log('No tasks for your neighbourhood');
+            }
+        })
+});
+
 //Handles route for posttaskform in dashboard.html
 router.post('/submit-task', function(request, response) {
     var taskDetails = ({
@@ -44,10 +61,10 @@ router.get('/neighbourhood', function(request, response) {
         .then(data => {
             const wardname = data.result['admin_ward'];
             const admindistrict = data.result['admin_district']
+                //pass in user as a session.loggedInUser
             const user = request.session.loggedinUser;
             response.writeHead(200, { 'Content-Type': 'application/json' });
             response.end(JSON.stringify(area = { wardname, admindistrict, user }));
-            console.log(area.wardname + area.admindistrict)
         })
         .catch(error => console.log('error:', error));
 });
