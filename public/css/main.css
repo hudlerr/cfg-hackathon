@@ -1,16 +1,4 @@
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
 
-
-@font-face {
-  font-family: Poppins-Regular;
-  src: url('../fonts/poppins/Poppins-Regular.ttf');
-}
-
-@font-face {
-  font-family: Poppins-Bold;
-  src: url('../fonts/poppins/Poppins-Bold.ttf');
-}
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
@@ -119,7 +107,7 @@ iframe {
   width: 100%;
   display: table;
   margin: 0;
-  
+
 
 
 }
