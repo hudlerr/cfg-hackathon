@@ -8,6 +8,41 @@ const postQueries = require('../queries/postQueries.js');
 const dbConnection = require('../../db_server/db_connection');
 
 
+//Handles routes for get tasks in dashboard.html
+router.get('/view-task', function(request, response) {
+    const postcode = request.session.loggedinUser.postcode;
+    dbConnection.query('SELECT * FROM tasks WHERE neighbourhoodId = $1', [postcode],
+        function(error, results) {
+            if (results.rows.length > 0) {
+                console.log(results.rows)
+                var tasks = results.rows;
+                response.writeHead(200, { 'Content-Type': 'application/json' });
+                response.end(JSON.stringify(tasks));
+            } else {
+                //TODO: this should be done client side
+                console.log('No tasks for your neighbourhood');
+            }
+        })
+});
+
+//Handles route for posttaskform in dashboard.html
+router.post('/submit-task', function(request, response) {
+    var taskDetails = ({
+        ownerId: request.session.loggedinUser.id,
+        neighbourhoodId: request.session.loggedinUser.postcode,
+        titleContent: request.body.task,
+        descriptionContent: request.body.description
+    });
+    console.log("From /submit-task " + taskDetails.neighbourhoodId);
+    //insert task into db along with users details
+    postQueries.addNewTask(taskDetails, err => {
+        if (err) return serverError(err, response);
+        response.writeHead(302, { 'Location': '/my-dashboard' });
+        response.end()
+    });
+    response.redirect('/my-dashboard');
+})
+
 //Handles route for dashboard
 router.get('/my-dashboard', function(request, response) {
     if (request.session.loggedin) {
@@ -26,9 +61,10 @@ router.get('/neighbourhood', function(request, response) {
         .then(data => {
             const wardname = data.result['admin_ward'];
             const admindistrict = data.result['admin_district']
+                //pass in user as a session.loggedInUser
+            const user = request.session.loggedinUser;
             response.writeHead(200, { 'Content-Type': 'application/json' });
-            response.end(JSON.stringify(area = { wardname, admindistrict }));
-            console.log(area.wardname + area.admindistrict)
+            response.end(JSON.stringify(area = { wardname, admindistrict, user }));
         })
         .catch(error => console.log('error:', error));
 });
@@ -36,6 +72,8 @@ router.get('/neighbourhood', function(request, response) {
 //Handles post form in create-user.html - create new user
 //TODO: check email isnt in use
 router.post('/adduser', function(request, response) {
+    //format postcode
+    var postcode = (request.body.postcode).toUpperCase().split(" ").join("");
     newUser = ({
         fullname: request.body.name,
         email: request.body.email,
@@ -81,12 +119,11 @@ router.post('/authoriseuser', function(request, response) {
 router.get('/logout', function(req, res) {
     console.log('Destroying session');
     req.session.destroy();
-    res.end('/');
+    res.redirect('/');
 });
 
 //Handles the route for the login path
 router.get('/login', function(request, response) {
-
     response.sendFile(path.join(__dirname, '..', '..', 'public', 'login.html'));
 });
 

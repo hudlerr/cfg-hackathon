@@ -9,8 +9,8 @@ const app = express();
 //uses sessions for user
 app.use(session({
     secret: 'secret',
-    resave: true,
-    saveUninitialized: true
+    resave: false,
+    saveUninitialized: false
 }));
 // Parses the request payload (if JSON) before the request goes to the handler
 app.use(bodyParser.json());

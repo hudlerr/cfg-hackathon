@@ -1,34 +1,32 @@
-# Close Hands
-
-## What is Close Hands?
-This is a project that intends to...
+## Close Hands
+Lets be helpful neighbours again!
 
  - - - -
  
 ### Tools:
-- {} for frontend
-- {} for backend
+- Bootstrap for frontend
+- NodeJS + Express + PostgreSQL for backend
 
  - - - -
  
 ### User Stories
-[ ] As a user, I want to be able to type in my post code and/or partial address, which places me in my correct location
+[ x ] As a user, I want to be able to type in my post code and/or partial address, which places me in my correct location
 
-[ ] As a user, I want to be placed in my correct neighbourhood group, so that I can interact with my neighbours
+[ x ] As a user, I want to be placed in my correct neighbourhood group, so that I can interact with my neighbours
 
-[ ] As a user, I want to be able to view a list requests from my neighbour group, so that I can choose to interact
+[ x ] As a user, I want to be able to view a list requests from my neighbour group, so that I can choose to interact
+
+[ x ] As a user, I want to be able to post a request, so that my neighbourhood is able to view it
+
+[ x ] As a user, I want to be able to login/logout and see my profile and neighbourhood group
 
 [ ] As a user, I want to be able to press a confirm button on a specific request, so as to pick up the request
-
-[ ] As a user, I want to be able to post a request, so that my neighbourhood is able to view it
-
-[ ] As a user, I want to be able to login/logout and see my profile and neighbourhood group
 
 [ ] As a user, I want to have a profile, so I can personalise my account
 
 [ ] As a user, I want to have a list of all my requests and responses, so I can keep track of my account
 
-[ ] As a user, I want to be able to press completed on a request when a neighbour has completed my task, so I can keep track tasks
+[ ] As a user, I want to be able to press 'completed' on a request when a neighbour has completed my task, so I can keep track tasks
 
  - - - -
 
@@ -57,6 +55,6 @@ This is a project that intends to...
 
   `npm run dev`
 
-  Navigate to http://localhost:7000
+  Navigate to http://localhost:8000
 
 For contribuing guidelines -> howtocontribute.md
