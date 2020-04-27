@@ -7,6 +7,24 @@ const getQueries = require('../queries/getQueries.js');
 const postQueries = require('../queries/postQueries.js');
 const dbConnection = require('../../db_server/db_connection');
 
+//Handles form in dashboard.html - user accepts request
+router.post('/accept-request', function(request, response) {
+    console.log('from /accept-request ' + request.body.taskid + request.session.loggedinUser.id);
+    var accepetedTask = {
+        repliedtouserid: request.session.loggedinUser.id,
+        repliedtousername: request.session.loggedinUser.fullname,
+        repliedtousernumber: request.session.loggedinUser.phonenumber,
+        taskid: request.body.taskid,
+    }
+
+    //insert accepted users id into this task
+    postQueries.setTaskAccepted(accepetedTask, err => {
+        if (err) return serverError(err, response);
+        response.writeHead(302, { 'Location': '/my-dashboard' });
+        response.end()
+    });
+    response.redirect('/my-dashboard');
+})
 
 //Handles routes for get tasks in dashboard.html
 router.get('/view-task', function(request, response) {
@@ -73,13 +91,13 @@ router.get('/neighbourhood', function(request, response) {
 //TODO: check email isnt in use
 router.post('/adduser', function(request, response) {
     //format postcode
-    var postcode = (request.body.postcode).toUpperCase().split(" ").join("");
+    var formattedPostcode = (request.body.postcode).toUpperCase().split(" ").join("");
     newUser = ({
         fullname: request.body.name,
         email: request.body.email,
         password: request.body.password,
         phonenumber: request.body.phone,
-        postcode: request.body.postcode,
+        postcode: formattedPostcode,
     });
     console.log("From /adduser " + request.body.name);
     postQueries.addNewUser(newUser, err => {
@@ -93,12 +111,14 @@ router.post('/adduser', function(request, response) {
 //Handles post form in login.html - checks user exits
 //TODO: password bcrypt
 router.post('/authoriseuser', function(request, response) {
+    //format postcode
     const username = request.body.username;
     const password = request.body.password;
     console.log("/authorise " + username + password);
     dbConnection.query('SELECT * FROM users WHERE email = $1 and password = $2', [username, password],
         function(error, results, fields) {
             console.log(results.rows);
+            var formattedPostcode = (results.rows[0].postcode).toUpperCase().split(" ").join("");
             if (results.rows.length > 0) {
                 request.session.loggedin = true;
                 request.session.loggedinUser = {
@@ -106,7 +126,7 @@ router.post('/authoriseuser', function(request, response) {
                     fullname: results.rows[0].fullname,
                     email: results.rows[0].email,
                     phonenumber: results.rows[0].phonenumber,
-                    postcode: results.rows[0].postcode
+                    postcode: formattedPostcode
                 }
                 response.redirect('/my-dashboard');
             } else {
