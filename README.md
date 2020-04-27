@@ -20,7 +20,7 @@ Lets be helpful neighbours again!
 
 [ x ] As a user, I want to be able to login/logout and see my profile and neighbourhood group
 
-[ ] As a user, I want to be able to press a confirm button on a specific request, so as to pick up the request
+[ x ] As a user, I want to be able to press a confirm button on a specific request, so as to pick up the request
 
 [ ] As a user, I want to have a profile, so I can personalise my account
 
