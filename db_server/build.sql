@@ -15,7 +15,7 @@ CREATE TABLE users
 );
 
 INSERT INTO users (fullname, email, password, phonenumber, postcode) VALUES
-('test', 'test@hotmail.com', 'test', 999, 'LE5 2AA');
+('Huda', 'test@hotmail.com', 'test', 999, 'LE52AA');
 
 --table to store tasks
 
@@ -27,10 +27,12 @@ CREATE TABLE tasks
     titleContent varchar(200) NOT NULL,
     descriptionContent varchar(200) NOT NULL,
     repliedtoUserId int, --nullable, insert when user picks up request
+    repliedtoUserNumber varchar(100),
+    repliedtoUsername varchar(100),
     created_date date NOT NULL DEFAULT CURRENT_DATE
 );
 
 INSERT INTO tasks (ownerId, neighbourhoodId, titleContent, descriptionContent)  VALUES
-( 01, 'LE5 2AA', 'Walk my cat', 'Just around the block');
+( 01, 'LE52AA', 'Walk my cat', 'Just around the block');
 
 COMMIT;
