@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="../app.js"></script>
+    <script src="js/utilities.js"></script>
+    <script src="js/login.js"></script>
 </head>
 
 <header class="header">
@@ -32,32 +33,35 @@
 </header>
 
 <body>
-    <form action="#" method="#">
+  <div class="bigbox">
+    <div class="box">
+      <img class="imgn" src="images/29815.jpg" alt="Neighbors"></a>
+    </div>
+    <div class="box">
         <div class="welcome">
             <h1>Welcome Back!</h1>
             <img class="logimg" src="images/login.png" alt="img">
             <h2>Login</h2>
         </div> 
-        <div>
-            <div class="container">
-                <label for="uname">Username</label>
-                <input type="text" placeholder="Email Address" name="uname" required>
-                <br>
-                <label for="psw">Password</label>
-                <input type="password" placeholder="Password" name="psw" required>
-                <button type="submit">Login</button>
-                <br>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember">Remember me
-                </label>
-                <span class="psw"><a class="link" href="#">Forgot password?</a></span>
-            </div>
+        <form id="login" action="#" method="#">
+          <div id="main">
+            <input id="username" type="text" placeholder="E-mail" name="uname" required>
+            <br>
+            <input id="pass" type="password" placeholder="Password" name="psw" required>
+            <button class="button" type="submit">Login</button>
+            <br>
+            <label>
+              <input type="checkbox" checked="checked" name="remember">Remember me
+            </label>
+            <span class="psw"><a class="link" href="#">Forgot password?</a></span>
             <br>
             <div class="signup">
-                <span>Don't have an account yet? <a class="link" href="#">Sign Up</a></span>
+              <span>Don't have an account yet? <a class="link" href="create-user.html">Sign Up</a></span>
             </div>
-        </div>
-    </form>
+          </div>
+        </form>
+    </div>
+  </div>
 </body>
 
 <footer>

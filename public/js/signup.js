@@ -1,47 +1,74 @@
-var form = document.getElementsByTagName("form")[0];
-var email = document.getElementById("email");
-var phone = document.getElementById("phone");
-var postcode = document.getElementById("postcode");
-var password = document.getElementById("password");
-var confirmPassword = document.getElementById("confirm_password");
-var error = document.querySelector(".error");
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
 
-form.addEventListener("Submit", function(event) {
-  if (password.validity.valueMissing || confirmPassword.validity.valueMissing) {
-    error.innerText = "Please enter a password";
-    event.preventDefault();
+//Show input error message
+function showError(input, message) {
+  // add error class into div
+  const formControl = input.parentElement; // gives you the div
+  formControl.className = 'form-control error'; // overrides the class
+  const small = formControl.querySelector('small');
+  small.innerText = message;
+}
+// check email validity
+function checkEmail(input) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (re.test(input.value.trim())) {
+    showSuccess(input);
+  } else {
+    showError(input, 'Email is not valid');
   }
+}
+//check passwords match
+function checkPasswordsMatch(input1, input 2){
+    if(input1.value !== input2.value){
+        showError(input2, 'Passwords do not match');
+    }
+}
 
-  if (password.validity.patternMismatch ||
-    confirmPassword.validity.patternMismatch) {
-    error.innerText =
-      "Password must contain at least eight characters, including one letter and one number";
-    event.preventDefault();
+function showSuccess(input) {
+  // add error class into div
+  const formControl = input.parentElement;
+  formControl.className = 'form-control success';
+}
+function checkRequired(inputArr) {
+  inputArr.forEach(function(input) {
+    if (input.value.trim() === '') {
+      showError(input, `${getFieldName(input)} is required`);
+    } else {
+      showSuccess(input);
+    }
+  });
+}
+//check input length
+function checkLength(input, min, max) {
+  if (input.value.length < min) {
+    showError(
+      input,
+      `${getFieldName(input)} must be at least ${min} characters`
+    );
+  } else if (input.value.length > max) {
+    showError(
+      input,
+      `${getFieldName(input)} must be less than ${max} characters`
+    );
+  } else {
+    showSuccess(input);
   }
+}
+// Get fieldname
+function getFieldName(input) {
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+//Event Listener
+form.addEventListener('submit', function(e) {
+  e.preventDefault(); // prevents from default submmiting
 
-  if (password.value != confirmPassword.value) {
-    error.innerText = "Passwords do not match";
-    event.preventDefault();
-  }
-
-  if (email.validity.typeMismatch) {
-    error.innerText = "Please enter a valid email address";
-    event.preventDefault();
-  }
-
-  if (email.validity.valueMissing) {
-    error.innerText = "Please enter an email address";
-    event.preventDefault();
-  }
-
-  if (phone.validity.valueMissing) {
-    error.innerText = "Please enter a Phone Number";
-    event.preventDefault();
-  }
-
-  if (postcode.validity.valueMissing) {
-    error.innerText = "Please enter your Postcode";
-    event.preventDefault();
-  }
-
+  checkRequired([username, email, password, password2]);
+  checkLength(username, 3, 15);
+  checkLength(password, 6, 25);
+  checkEmail(email);
+  checkPasswordsMatch(password, password2);
 });

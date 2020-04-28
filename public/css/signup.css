@@ -14,6 +14,7 @@ a {
     font-size: 16px;
     color: #373737;
     text-decoration: none;
+    text-align: center;
 }
 
 /*Nav bar*/
@@ -21,27 +22,41 @@ a {
     min-height: 50px;
   }
     
-  .navbar-nav .nav-item .nav-link {
+.navbar-nav .nav-item .nav-link {
       color:  #373737;
       padding: 10px;
       margin: 10px;
       border: 1px #373737 ;
   }
-  .navbar-nav .nav-item.active .nav-link,
-  .navbar-nav .nav-item:hover {
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover {
       background-color: #CCD6EB;
       border-radius: 30px;
   }
 
 /*Form*/
 
-.section {
-    background-color: #DBE4EE;
+.bigbox {
+    background: white;
+    background: linear-gradient(90deg, white 45%, #CCD6EB 100%);
     border-radius: 6px;
     box-shadow: 0 0 1em #222;
+    margin: auto;
+    margin-top: 50px;
+    width: 950px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.box {
     padding: 10px;
-    max-width: 500px;
-    margin: 30px auto 30px;
+    margin: auto;
+}
+
+.imgn {
+    justify-content: auto;
+    width: 450px;
+    height: 450px;
 }
 
 h2 {
@@ -53,10 +68,6 @@ h2 {
 .logimg {
     width: 50px;
     margin-left: 45%;
-}
-
-form{
-    margin: 19px;
 }
 
 label {
@@ -108,11 +119,11 @@ input[type="submit"] {
     display: block;
     font-size: 1.5em;
     width: auto;
-    height: 50px;
-    margin: 0 25%;
+    height: auto;
+    margin: auto;
     text-align: center;
     outline: none;
-    padding: 5px 10px;
+    padding: 10px;
     text-shadow: 0 1px #F9A5A5;
 }
 
@@ -176,4 +187,17 @@ input[type="submit"]:hover {
     text-align: center;
     padding: 10px;
     margin: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    body{
+        background-color: #00203FFF;
+    }
+    .bigbox{
+        grid-template-columns: auto;
+        width: 455px;
+        justify-content: center;
+        background: white;
+        background: linear-gradient(0deg, #CCD6EB 0%, white 50%);
+    }
 }
