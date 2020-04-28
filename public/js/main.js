@@ -34,10 +34,10 @@ function showTaskTable(err, data) {
     } else {
         var tasks = JSON.parse(data);
         console.log('inside showTaskTable ' + data);
-        console.log('just to chck ' + tasks.descriptioncontent);
         var table = document.getElementById('tasks-table');
         /* create a row in table for each task returned from DB */
         tasks.forEach(function(task) {
+            var body = document.createElement('tbody');
             var row = document.createElement('tr');
 
             //create date column
@@ -69,24 +69,11 @@ function showTaskTable(err, data) {
                 status.innerHTML = 'Picked up by ' + task.repliedtousername;
             }
             row.appendChild(status);
-
-            table.appendChild(row);
+            body.appendChild(row)
+            table.appendChild(body);
         });
     }
-    // request('/getacceptedUserDetails', editTaskTable)
     request('/neighbourhood', showUserInfo);
-}
-
-function editTaskTable(err, data) {
-    if (err) {
-        console.error(err);
-    } else {
-        var acceptedUserDetails = JSON.parse(data);
-        console.log("inside editTaskTable " + acceptedUserDetails);
-
-        acceptedUserName = acceptedUserDetails.name;
-        acceptedPhonenumber = acceptedUserDetails.phonenumber;
-    }
 }
 
 request('/view-task', showTaskTable);
