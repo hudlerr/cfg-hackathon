@@ -1,3 +1,6 @@
+var acceptedUserName;
+var acceptedPhonenumber;
+
 /* generic XHR request */
 function request(url, cb) {
     var xhr = new XMLHttpRequest();
@@ -31,10 +34,10 @@ function showTaskTable(err, data) {
     } else {
         var tasks = JSON.parse(data);
         console.log('inside showTaskTable ' + data);
-        console.log('just to chck ' + tasks.descriptioncontent);
         var table = document.getElementById('tasks-table');
         /* create a row in table for each task returned from DB */
         tasks.forEach(function(task) {
+            var body = document.createElement('tbody');
             var row = document.createElement('tr');
 
             //create date column
@@ -54,14 +57,20 @@ function showTaskTable(err, data) {
 
             //create status column
             var status = document.createElement('td');
-            if (task.repliedtouserid === null) { //TODO: create button for 'i can help'
-                status.innerHTML = 'I can help!';
+            var value;
+            if (task.repliedtouserid === null) {
+                //Create form with button - 'i can help'
+                value = 'I can help!';
+                var button = ' <form name="buttonForm" action="/accept-request" method="post"> <input type="hidden" name="taskid" value="' + task.taskid + '"/> <button type="submit" class="btn" onclick="">' + value + '</button></form>';
+                status.innerHTML = button;
             } else {
-                status.innerHTML = task.repliedtouserid; //TODO: fit complete button into here?
+                //display user name and number - depending on who is logged in :( 
+                //TODO: fit complete button into here?
+                status.innerHTML = 'Picked up by ' + task.repliedtousername;
             }
             row.appendChild(status);
-
-            table.appendChild(row);
+            body.appendChild(row)
+            table.appendChild(body);
         });
     }
     request('/neighbourhood', showUserInfo);
