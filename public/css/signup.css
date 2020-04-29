@@ -28,6 +28,7 @@ a {
       margin: 10px;
       border: 1px #373737 ;
   }
+
 .navbar-nav .nav-item.active .nav-link,
 .navbar-nav .nav-item:hover {
       background-color: #CCD6EB;
