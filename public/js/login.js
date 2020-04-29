@@ -1,5 +1,3 @@
-const e = require("express");
-
 (function(){
     var form = document.getElementById('login');
 
