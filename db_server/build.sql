@@ -10,8 +10,8 @@ CREATE TABLE users
     fullname char(300) NOT NULL,
     email varchar(300) NOT NULL,
     password varchar(300) NOT NULL,
-    phonenumber varchar(100) NOT NULL,
-    postcode varchar(300) NOT NULL
+    phonenumber int(100) NOT NULL,
+    postcode char(300) NOT NULL
 );
 
 INSERT INTO users (fullname, email, password, phonenumber, postcode) VALUES
