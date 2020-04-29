@@ -1,6 +1,3 @@
-var acceptedUserName;
-var acceptedPhonenumber;
-
 /* generic XHR request */
 function request(url, cb) {
     var xhr = new XMLHttpRequest();
@@ -29,12 +26,15 @@ function showUserInfo(err, data) {
 }
 
 function showTaskTable(err, data) {
+    request('/neighbourhood', showUserInfo);
+
     if (err) {
         console.error(err);
     } else {
-        var tasks = JSON.parse(data);
+        var tabledetails = JSON.parse(data);
         console.log('inside showTaskTable ' + data);
         var table = document.getElementById('tasks-table');
+        var tasks = tabledetails.taskInfo;
         /* create a row in table for each task returned from DB */
         tasks.forEach(function(task) {
             var body = document.createElement('tbody');
@@ -71,9 +71,34 @@ function showTaskTable(err, data) {
             row.appendChild(status);
             body.appendChild(row)
             table.appendChild(body);
+
+            /* create listitem for each task found user has picked up */
+            var outstandingdiv = document.getElementById('outstanding-tasks');
+            var requesteddiv = document.getElementById('requested-tasks');
+            if (task.repliedtouserid === tabledetails.loggedinUserId) {
+                var listitem = document.createElement('LI');
+                listitem.innerHTML = '<li style="font-size: 12px;">"' + task.titlecontent + '" for <mark>' + task.ownername + '</mark> - ' + task.ownernumber + ' - <mark>' + task.status + '</mark> </li>';
+                outstandingdiv.append(listitem);
+
+                /* create listitem for each task found user is owner of */
+            } else if (task.ownerid === tabledetails.loggedinUserId) {
+                var outlistitem = document.createElement('LI');
+                if (task.repliedtousername === null) {
+                    outlistitem.innerHTML = '<li style="font-size: 12px;">"' + task.titlecontent + '" <mark>is not picked up yet</mark> </li></br>';
+                } else {
+                    /* create button to complete a task if user is owner */
+                    var statusbutton;
+                    if (task.status === 'In Progress') {
+                        statusbutton = '<button type="submit" class="btn btn-warning btn-sm" style="line-height: 0.9;">' + task.status + '</button>';
+                    } else {
+                        statusbutton = '<li><button type="submit" class="btn btn-success btn-sm" style="line-height: 0.9;" disabled>' + task.status + '</button></li>';
+                    }
+                    outlistitem.innerHTML = '<li style="font-size: 12px;">"' + task.titlecontent + '" picked up by <mark>' + task.ownername + '</mark> - ' + task.ownernumber + ' - <form name="completeRequest" action="/complete-request" method="post" style="display: inline;"> <input type="hidden" name="taskid" value="' + task.taskid + '"/> ' + statusbutton + '</form> </li></br>';
+                }
+                requesteddiv.append(outlistitem);
+            }
         });
     }
-    request('/neighbourhood', showUserInfo);
 }
 
 request('/view-task', showTaskTable);

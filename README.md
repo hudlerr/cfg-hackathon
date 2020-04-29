@@ -22,11 +22,11 @@ Lets be helpful neighbours again!
 
 [ x ] As a user, I want to be able to press a confirm button on a specific request, so as to pick up the request
 
-[ ] As a user, I want to have a profile, so I can personalise my account
+[ x ] As a user, I want to have a profile, so I can personalise my account
 
-[ ] As a user, I want to have a list of all my requests and responses, so I can keep track of my account
+[ x ] As a user, I want to have a list of all my requests and responses, so I can keep track of my account
 
-[ ] As a user, I want to be able to press 'completed' on a request when a neighbour has completed my task, so I can keep track tasks
+[ x ] As a user, I want to be able to press 'completed' on a request when a neighbour has completed my task, so I can keep track tasks
 
  - - - -
 

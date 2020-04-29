@@ -3,9 +3,20 @@ const path = require('path');
 const fetch = require('node-fetch');
 const { Router } = express; //Here we destructure (ES6) the Router value off of express
 const router = Router();
-const getQueries = require('../queries/getQueries.js');
 const postQueries = require('../queries/postQueries.js');
 const dbConnection = require('../../db_server/db_connection');
+
+//Handles button in dashboard.html - user completes a request
+router.post('/complete-request', function(request, response) {
+    console.log('from /complete-request ' + request.body.taskid);
+    var taskid = request.body.taskid;
+    postQueries.setTaskCompleted(taskid, err => {
+        if (err) return serverError(err, response);
+        response.writeHead(302, { 'Location': '/my-dashboard' });
+        response.end()
+    });
+    response.redirect('/my-dashboard');
+})
 
 //Handles form in dashboard.html - user accepts request
 router.post('/accept-request', function(request, response) {
@@ -33,9 +44,10 @@ router.get('/view-task', function(request, response) {
         function(error, results) {
             if (results.rows.length > 0) {
                 console.log(results.rows)
-                var tasks = results.rows;
+                var taskInfo = results.rows;
+                var loggedinUserId = request.session.loggedinUser.id;
                 response.writeHead(200, { 'Content-Type': 'application/json' });
-                response.end(JSON.stringify(tasks));
+                response.end(JSON.stringify(tabledetails = { taskInfo, loggedinUserId }));
             } else {
                 //TODO: this should be done client side
                 console.log('No tasks for your neighbourhood');
@@ -47,6 +59,8 @@ router.get('/view-task', function(request, response) {
 router.post('/submit-task', function(request, response) {
     var taskDetails = ({
         ownerId: request.session.loggedinUser.id,
+        ownernumber: request.session.loggedinUser.phonenumber,
+        ownername: request.session.loggedinUser.fullname,
         neighbourhoodId: request.session.loggedinUser.postcode,
         titleContent: request.body.task,
         descriptionContent: request.body.description
