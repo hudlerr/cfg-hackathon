@@ -59,8 +59,8 @@ a {
     height: 450px;
 }
 
-#container {
-    margin: 20px;
+#login {
+    margin: 0 30px
 }
 
 input[type=text] {
@@ -131,7 +131,6 @@ span.psw {
 .graphic{
     height: 30vw;
     margin: 0px;
-  
   }
   
 .socialmediabuttons {
@@ -174,7 +173,7 @@ span.psw {
     margin: 10px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     body{
         background-color: #00203FFF;
     }
