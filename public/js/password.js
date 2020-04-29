@@ -15,7 +15,7 @@
             target.className = '';
         }
     }
-    function passwordMatch(e) {
+    function passwordsMatch(e) {
         var target = e.target || e.srcElement;
         if ((password.value === target.value) && target.value.length >= 8){
             target.className = 'pass';

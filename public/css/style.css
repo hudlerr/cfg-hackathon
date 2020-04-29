@@ -48,6 +48,7 @@ li, a {
 .toppicture img{
 display: block;
 width: 100%;
+opacity: 0.5;
 position: relative;
 }
 
@@ -56,9 +57,9 @@ position: relative;
   top:45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-weight:  bolder;
+  font-weight:  800;
   font-size: 7.5vw;
-  color: white;
+  color: black;
 
 
 
@@ -71,7 +72,7 @@ position: relative;
   transform: translate(-50%, -50%);
   font-weight:  bolder;
   font-size: 2.3vw;
-  color: white;
+  color: black;
 
 
 }
