@@ -77,18 +77,24 @@ function showTaskTable(err, data) {
             var requesteddiv = document.getElementById('requested-tasks');
             if (task.repliedtouserid === tabledetails.loggedinUserId) {
                 var listitem = document.createElement('LI');
-                listitem.innerHTML = '<li style="font-size: 12px;">"' + task.titlecontent + '" for <mark>' + task.ownername + '</mark> - ' + task.ownernumber + ' - <mark>In Progress</mark> </li>';
+                listitem.innerHTML = '<li style="font-size: 12px;">"' + task.titlecontent + '" for <mark>' + task.ownername + '</mark> - ' + task.ownernumber + ' - <mark>' + task.status + '</mark> </li>';
                 outstandingdiv.append(listitem);
 
-                /* create listitem for each task found user has picked up */
+                /* create listitem for each task found user is owner of */
             } else if (task.ownerid === tabledetails.loggedinUserId) {
                 var outlistitem = document.createElement('LI');
                 if (task.repliedtousername === null) {
                     outlistitem.innerHTML = '<li style="font-size: 12px;">"' + task.titlecontent + '" <mark>is not picked up yet</mark> </li></br>';
                 } else {
-                    outlistitem.innerHTML = '<li style="font-size: 12px;">"' + task.titlecontent + '" picked up by <mark>' + task.repliedtousername + '</mark> - ' + task.repliedtousernumber + ' - <mark>In Progress</mark> </li></br>';
+                    /* create button to complete a task if user is owner */
+                    var statusbutton;
+                    if (task.status === 'In Progress') {
+                        statusbutton = '<button type="submit" class="btn btn-warning btn-sm" style="line-height: 0.9;">' + task.status + '</button>';
+                    } else {
+                        statusbutton = '<li><button type="submit" class="btn btn-success btn-sm" style="line-height: 0.9;" disabled>' + task.status + '</button></li>';
+                    }
+                    outlistitem.innerHTML = '<li style="font-size: 12px;">"' + task.titlecontent + '" picked up by <mark>' + task.ownername + '</mark> - ' + task.ownernumber + ' - <form name="completeRequest" action="/complete-request" method="post" style="display: inline;"> <input type="hidden" name="taskid" value="' + task.taskid + '"/> ' + statusbutton + '</form> </li></br>';
                 }
-                //'<li style="font-size: 12px;">' + task.titlecontent + ' picked up by <mark>' + task.ownername + '</mark> - ' + task.ownernumber + ' - <mark><form name="completeRequest" action="/complete-request" method="post"> <input type="hidden" name="taskid" value="' + task.taskid + '"/> <button type="submit" class="btn" >' + task.status + '</button></form></mark> </li>';
                 requesteddiv.append(outlistitem);
             }
         });

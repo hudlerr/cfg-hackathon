@@ -3,9 +3,20 @@ const path = require('path');
 const fetch = require('node-fetch');
 const { Router } = express; //Here we destructure (ES6) the Router value off of express
 const router = Router();
-const getQueries = require('../queries/getQueries.js');
 const postQueries = require('../queries/postQueries.js');
 const dbConnection = require('../../db_server/db_connection');
+
+//Handles button in dashboard.html - user completes a request
+router.post('/complete-request', function(request, response) {
+    console.log('from /complete-request ' + request.body.taskid);
+    var taskid = request.body.taskid;
+    postQueries.setTaskCompleted(taskid, err => {
+        if (err) return serverError(err, response);
+        response.writeHead(302, { 'Location': '/my-dashboard' });
+        response.end()
+    });
+    response.redirect('/my-dashboard');
+})
 
 //Handles form in dashboard.html - user accepts request
 router.post('/accept-request', function(request, response) {

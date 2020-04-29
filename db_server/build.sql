@@ -31,7 +31,8 @@ CREATE TABLE tasks
     repliedtoUserId int, --nullable, insert when user picks up request
     repliedtoUserNumber varchar(100),
     repliedtoUsername varchar(100),
-    created_date date NOT NULL DEFAULT CURRENT_DATE
+    created_date date NOT NULL DEFAULT CURRENT_DATE,
+    status varchar(100)
 );
 
 INSERT INTO tasks (ownerId, ownerNumber, ownerName, neighbourhoodId, titleContent, descriptionContent)  VALUES

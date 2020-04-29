@@ -19,12 +19,19 @@ const addNewTask = userDetails => {
 const setTaskAccepted = accepetedTask => {
     const { repliedtouserid, repliedtousername, repliedtousernumber, taskid } = accepetedTask;
     return dbConnection.query(
-        `UPDATE tasks SET repliedtouserid=($1), repliedtousername=($2), repliedtousernumber=($3)  where taskid=($4)`, [repliedtouserid, repliedtousername, repliedtousernumber, taskid]
+        `UPDATE tasks SET repliedtouserid=($1), repliedtousername=($2), repliedtousernumber=($3), status='In Progress'  where taskid=($4)`, [repliedtouserid, repliedtousername, repliedtousernumber, taskid]
+    );
+}
+
+const setTaskCompleted = taskid => {
+    return dbConnection.query(
+        `UPDATE tasks SET status='Completed!!'  where taskid=($1)`, [taskid]
     );
 }
 
 module.exports = {
     addNewUser,
     addNewTask,
-    setTaskAccepted
+    setTaskAccepted,
+    setTaskCompleted
 }
