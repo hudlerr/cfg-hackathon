@@ -23,6 +23,8 @@ CREATE TABLE tasks
 (
     taskid SERIAL PRIMARY KEY,
     ownerId int NOT NULL,
+    ownerNumber varchar(100) NOT NULL,
+    ownerName varchar(100) NOT NULL,
     neighbourhoodId varchar(200) NOT NULL, --use posters postcode to match tasks to neighbourhood
     titleContent varchar(200) NOT NULL,
     descriptionContent varchar(200) NOT NULL,
@@ -32,7 +34,7 @@ CREATE TABLE tasks
     created_date date NOT NULL DEFAULT CURRENT_DATE
 );
 
-INSERT INTO tasks (ownerId, neighbourhoodId, titleContent, descriptionContent)  VALUES
-( 01, 'LE52AA', 'Walk my cat', 'Just around the block');
+INSERT INTO tasks (ownerId, ownerNumber, ownerName, neighbourhoodId, titleContent, descriptionContent)  VALUES
+( 01, '07963527356', 'Huda', 'LE52AA', 'Walk my cat', 'Just around the block');
 
 COMMIT;

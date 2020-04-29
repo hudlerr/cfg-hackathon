@@ -33,9 +33,10 @@ router.get('/view-task', function(request, response) {
         function(error, results) {
             if (results.rows.length > 0) {
                 console.log(results.rows)
-                var tasks = results.rows;
+                var taskInfo = results.rows;
+                var loggedinUserId = request.session.loggedinUser.id;
                 response.writeHead(200, { 'Content-Type': 'application/json' });
-                response.end(JSON.stringify(tasks));
+                response.end(JSON.stringify(tabledetails = { taskInfo, loggedinUserId }));
             } else {
                 //TODO: this should be done client side
                 console.log('No tasks for your neighbourhood');
@@ -47,6 +48,8 @@ router.get('/view-task', function(request, response) {
 router.post('/submit-task', function(request, response) {
     var taskDetails = ({
         ownerId: request.session.loggedinUser.id,
+        ownernumber: request.session.loggedinUser.phonenumber,
+        ownername: request.session.loggedinUser.fullname,
         neighbourhoodId: request.session.loggedinUser.postcode,
         titleContent: request.body.task,
         descriptionContent: request.body.description
