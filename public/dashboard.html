@@ -4,16 +4,124 @@
 <head>
     <meta charset="utf-8">
     <title>Close Hands</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/neighbourhood-dashboard.css">
 </head>
 
+<header class="header">
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #DBE4EE;">
+        <a class="navbar-brand" href="/">
+            <img src="images/closehands.png" width="70px" height="70px" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <!--- nav item Taks --->
+                <li class="nav-item">
+                    <!--- drop down in nav --->
+                    <a class="nav-link">
+                        <div class="table_center">
+                            <div class="drop-down">
+                                <div id="dropDown" class="drop-down__button">
+                                    <span class="drop-down__name">
+                    <div id="hi-user"></div>
+                  </span>
+                                </div>
+                                <div class="drop-down__menu-box">
+                                    <ul class="drop-down__menu">
+                                        <li data-name="activity" class="drop-down__item">My Outstanding Tasks</li>
+                                        <div class="text-left" id="outstanding-tasks">
+                                            </br>
+                                        </div>
+                                        <li data-name="profile" class="drop-down__item" class="font-weight-bold">My Requests</li>
+                                        <div class="text-left" id="requested-tasks">
+                                            <!-- <li style="font-size: 12px;">No Requested Tasks :(</li> -->
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <!--- dropdown in nav end--->
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log out</a>
+                </li>
+            </ul>
+        </div>
+</header>
+
 <body>
-    <h1>Users Dashboard</h1>
-    <div id="maindiv">
+    <h1> Help someone nearby... </h1>
+
+    <div class="intro" id="maindiv">
         </p>Loading...</p>
     </div>
 
-    <script src="./js/main.js"></script>
+    <p> If you can help, click "I can help" and your contact details will be sent to the task owner who will get in touch with you directly.</p>
+
+    <!--- task table --->
+
+    <table id="tasks-table">
+        <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Task</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tr>
+    </table>
+
+    <!------>
+
+    <h2> Or post a task. </h2>
+
+    <div class="intro2">
+        If you need help, post a task below.
+    </div>
+
+    <div class="buttomform">
+        <form name="posttaskform" id="posttask" action="/submit-task" onsubmit="return validateForm()" method="post">
+            <label style="margin-bottom:-18px;" for="task">Task:</label><br>
+            <input type="text" id="task" name="task"><br>
+            <label for="description">Description:</label><br>
+            <textarea rows="5" cols="50" id="description" name="description"></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div class="socialmediabuttons">
+        <a style="padding: 10px;font-size: 30px;width: 80px;text-align: center;text-decoration: none;" href="#" class="fa fa-facebook" target="_blank"></a>
+        <a style="padding: 10px;font-size: 30px;width: 80px;text-align: center;text-decoration: none;" href="#" class="fa fa-twitter" target="_blank"></a>
+        <a style="padding: 10px;font-size: 30px;width: 80px;text-align: center;text-decoration: none;" href="#" class="fa fa-instagram" target="_blank"></a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/myaccount.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
+
+<hr>
+
+<footer>
+    with &#x1F49B; from us.
+</footer>
 
 </html>

@@ -59,7 +59,9 @@ position: relative;
   transform: translate(-50%, -50%);
   font-weight:  800;
   font-size: 7.5vw;
-  color: black;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+
 
 
 
@@ -72,7 +74,9 @@ position: relative;
   transform: translate(-50%, -50%);
   font-weight:  bolder;
   font-size: 2.3vw;
-  color: black;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+
 
 
 }
@@ -80,8 +84,8 @@ position: relative;
 
 .intro {
 
-font-size: 1.6vw;
-margin-bottom: 50px;
+font-size: 1.3vw;
+margin-bottom: 20px;
 }
 
 /*choice boxes and images*/
@@ -98,9 +102,9 @@ margin-bottom: 50px;
 
 
 .choice_image {
-  height: 20vw;
-  width:20vw;
-  margin: 10px 50px 50px 50px;
+  height: 10vw;
+  width:10vw;
+  margin: 0px 50px 0px 50px;
   opacity: 0.1;
 }
 
@@ -110,7 +114,7 @@ margin-bottom: 50px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight:  bolder;
-  font-size: 2.5vw;
+  font-size: 1.5vw;
 
 
 }
@@ -124,10 +128,15 @@ margin-bottom: 50px;
 
 .section{
   background-color: #DBE4EE;
-  padding: 20px 0px 60px 0px;
-  margin: 100px;
+  padding: 10px 0px 60px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 50px;
   border-radius: 25px;
-  height: 50%;
+  width: 80vw;
+  height: 20vw;
+
 
 }
 
@@ -146,12 +155,12 @@ margin-bottom: 50px;
   background-color: #CCD6EB;
   opacity: 0.9;
   border-radius: 50%;
-  width: 17vw;
-  height: 17vw;
+  width: 13vw;
+  height: 13vw;
   position: relative;
-  padding: 50px;
-  margin: 10px;
-  font-size: 1.4vw;
+  padding: 10px;
+  margin: 5px;
+  font-size: 1.3vw;
 
 
 
@@ -159,29 +168,22 @@ margin-bottom: 50px;
 
 .process{
   margin: 10px;
-  font-size: 2.5vw;
-
-
+  font-size: 1.8vw;
 
 }
 
-.graphic{
-  height: 30vw;
-  margin: 0px;
-
-}
 
 
 .socialmediabuttons {
   max-width: 100%;
   text-align: center;
   padding: 10px;
-  font-size: 3vw;
-
+  font-size: 2vw;
+  margin-bottom: 30px;
 }
 
 .fa  {
-padding: 20px;
+padding: 10px;
 font-size: 60px;
 width: 80px;
 text-align: center;
@@ -204,4 +206,11 @@ text-decoration: none;
 .toggle
 {
   color: black;
+}
+
+
+footer {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3vw;
+
 }
