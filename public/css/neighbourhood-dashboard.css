@@ -46,13 +46,30 @@ a {
 /*Title*/
 
 h1 {
+    color: #111;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 90px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+    display: inline-block;
+}
+
+h2 {
+    color: #373737;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    display: inline-block;
+}
+
+h3 {
     color: #373737;
     text-align: center;
-    font-size: 70px;
+    font-size: 45px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    margin-top: 40px;
-    margin-bottom: -80px;
+    font-weight: lighter;
+    display: inline-block;
 }
 
 .intro {
@@ -78,7 +95,7 @@ table {
     font-family: 'Montserrat', sans-serif;
     border-collapse: collapse;
     margin: auto;
-    margin-top: -50px;
+    margin-top: 0px;
     padding: 0;
     width: 80%;
     table-layout: fixed;
@@ -153,15 +170,6 @@ table tr:hover {
 
 
 /*2nd header*/
-
-h2 {
-    color: #373737;
-    text-align: center;
-    font-size: 70px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    margin: 50px 10px 10px 10px;
-}
 
 .intro2 {
     color: #373737;
