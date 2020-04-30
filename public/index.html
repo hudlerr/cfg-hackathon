@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Close Hands</title>
+    <title>Neighbourly</title>
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -13,77 +13,71 @@
 </head>
 
 <header class="header">
-
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #DBE4EE;">
-        <a class="navbar-brand" href="/">
-            <img src="images/closehands.png" width="70px" height="70px" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Log in</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/create-user">Create account</a>
-                </li>
-            </ul>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #DBE4EE;">
+    <a class="navbar-brand" href="/">
+      <img id='laughimg' src="images/laugh.png" width="70px" height="70px" alt="">
+    </a>
+    <div class="tittle">
+      <h1 class="text1">Neighbourly</h1>
+      <p class="text2">Let’s connect and help each other!</p>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Log in</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/create-user">Create account</a>
+        </li>
+      </ul>
+    </div>
 </header>
 
 <body>
-
-    <div class="toppicture">
-        <img class="top_img" src="images/hands.jpg">
-        <div class="text1">Close Hands </div>
-        <div class="text2">Let’s connect and help each other.</div>
-    </div>
-
-    <div class="intro"> Close Hands aims to connect neighbours and promote the community
+  <div class="toppicture">
+    <img class="top_img" src="images/neighbourhood.jpg">
+  </div>
+  <div class="intro"> Neighbourly aims to connect neighbours and promote the community
         spirit. Users can  share their postcodes and check <br> the posts from neighbours requesting help. Users can
         pick up a task or post their own request. <br><br> To get started choose one of the below:</div>
-
-
-    <div class="choicecontainer">
-      <div class="container2">
-        <img class="choice_image"
-          src="https://cdn4.iconfinder.com/data/icons/need-a-helping-hand/60/hand-give-love-512.png">
-        <a href="login.html" class='text'>I want to help someone</a>
-      </div>
-      <div class="container2">
-        <div class='text'>or</div>
-      </div>
-      <div class="container2">
-        <img class="choice_image"
-          src="https://cdn4.iconfinder.com/data/icons/need-a-helping-hand/60/hand-give-love-512.png">
-        <a href="login.html" class='text'>I need help</a>
-      </div>
+  <div class="choicecontainer">
+    <div class="container2">
+      <img class="choice_image" src="https://cdn4.iconfinder.com/data/icons/need-a-helping-hand/60/hand-give-love-512.png">
+      <a href="login.html" class='text'>I want to help someone</a>
     </div>
-
-
-    <div class="section">
-        <div class="process">How does it work?</div>
-        <div class="steps_container">
-            <div class="circle">Step 1:<br>Create an account</div>
-            <div class="circle">Step 2:<br>Enter your postcode</div>
-            <div class="circle">Step 3:<br>Help someone nearby or ask for help </div>
-        </div>
+    <div class="container2">
+      <div class='text'>or</div>
     </div>
-
-    <div class="socialmediabuttons">
-        <a href="#" class="fa fa-facebook" target="_blank"></a>
-        <a href="#" class="fa fa-twitter" target="_blank"></a>
-        <a href="#" class="fa fa-instagram" target="_blank"></a>
+    <div class="container2">
+      <img class="choice_image"src="https://cdn4.iconfinder.com/data/icons/need-a-helping-hand/60/hand-give-love-512.png">
+      <a href="login.html" class='text'>I need help</a>
     </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <div class="section">
+    <div class="process">How does it work?</div>
+    <div class="steps_container">
+        <div class="circle">Step 1:<br>Create an account</div>
+        <div class="circle">Step 2:<br>Enter your postcode</div>
+        <div class="circle">Step 3:<br>Help someone nearby or ask for help </div>
+    </div>
+  </div>
+
+  <div class="socialmediabuttons">
+      <a href="#" class="fa fa-facebook" target="_blank"></a>
+      <a href="#" class="fa fa-twitter" target="_blank"></a>
+      <a href="#" class="fa fa-instagram" target="_blank"></a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </body>
 <hr>
