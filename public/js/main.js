@@ -19,7 +19,7 @@ function showUserInfo(err, data) {
         var userInfo = JSON.parse(data);
         console.log("inside updateDom dashboard " + data);
         var neighbourhood = document.getElementById('maindiv');
-        neighbourhood.innerHTML = "My NeighbourHood " + userInfo.wardname + ' - ' + userInfo.admindistrict;
+        neighbourhood.innerHTML = '<h2> MY NEIGHBOURHOOD </h2></br><h1>' + userInfo.wardname + '</h1><h3>' + userInfo.admindistrict + '</h3>';
         var namediv = document.getElementById('hi-user');
         namediv.innerHTML = 'Hello, ' + userInfo.user.fullname;
     }
@@ -91,7 +91,7 @@ function showTaskTable(err, data) {
                     if (task.status === 'In Progress') {
                         statusbutton = '<button type="submit" class="btn btn-warning btn-sm" style="line-height: 0.9;">' + task.status + '</button>';
                     } else {
-                        statusbutton = '<li><button type="submit" class="btn btn-success btn-sm" style="line-height: 0.9;" disabled>' + task.status + '</button></li>';
+                        statusbutton = '<button type="submit" class="btn btn-success btn-sm" style="line-height: 0.9;" disabled>' + task.status + '</button>';
                     }
                     outlistitem.innerHTML = '<li style="font-size: 12px;">"' + task.titlecontent + '" picked up by <mark>' + task.ownername + '</mark> - ' + task.ownernumber + ' - <form name="completeRequest" action="/complete-request" method="post" style="display: inline;"> <input type="hidden" name="taskid" value="' + task.taskid + '"/> ' + statusbutton + '</form> </li></br>';
                 }
