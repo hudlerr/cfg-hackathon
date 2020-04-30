@@ -34,14 +34,22 @@ li, a {
     border-radius: 30px;
 }
 
+#laughimg{
+  margin-left: 10px;
+  margin-right: 5px;
+  filter: grayscale(10%);
+}
 
 /*title and intro*/
 
 .toppicture{
-  height: 50%;
+  height: 100%;
   width: 100%;
   position: relative;
   margin-bottom: 50px;
+  filter:  grayscale(60%);
+
+
 
 }
 
@@ -51,40 +59,31 @@ width: 100%;
 position: relative;
 }
 
-.text1 {
-  position: absolute;
-  top:45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight:  bolder;
-  font-size: 7.5vw;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-
-
-
-
+.tittle {
+  text-align: center;
+  margin-top: 10px;
 }
-
-.text2 {
-  position: absolute;
-  top:55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.text1 {
+  position: relative;
+  margin: auto;
   font-weight:  bolder;
-  font-size: 2.3vw;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-
-
-
+  font-size: 45px;
+  color:#373737;
+}
+.text2 {
+  position: relative;
+  font-weight:  bolder;
+  left: 0px;
+  font-size: 16px;
+  color: #373737;
 }
 
 
 .intro {
 
-font-size: 1.3vw;
+font-size: 20px;
 margin-bottom: 20px;
+font-weight: bolder;
 }
 
 /*choice boxes and images*/
@@ -101,8 +100,8 @@ margin-bottom: 20px;
 
 
 .choice_image {
-  height: 10vw;
-  width:10vw;
+  height: 150px;
+  width:150px;
   margin: 0px 50px 0px 50px;
   opacity: 0.1;
 }
@@ -113,7 +112,7 @@ margin-bottom: 20px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight:  bolder;
-  font-size: 1.5vw;
+  font-size: 20px;
 
 
 }
@@ -121,6 +120,7 @@ margin-bottom: 20px;
 .text:hover {
   color: #309AA8;
   font-size: 200%;
+  text-decoration: none;
 }
 
 /*How does it work*/
@@ -133,8 +133,8 @@ margin-bottom: 20px;
   margin-top: 60px;
   margin-bottom: 50px;
   border-radius: 25px;
-  width: 80vw;
-  height: 20vw;
+  width: 80%;
+  height: 20%;
 
 
 }
@@ -154,12 +154,12 @@ margin-bottom: 20px;
   background-color: #CCD6EB;
   opacity: 0.9;
   border-radius: 50%;
-  width: 13vw;
-  height: 13vw;
+  width: 200px;
+  height: 200px;
   position: relative;
   padding: 10px;
   margin: 5px;
-  font-size: 1.3vw;
+  font-size: 20px;
 
 
 
@@ -167,7 +167,7 @@ margin-bottom: 20px;
 
 .process{
   margin: 10px;
-  font-size: 1.8vw;
+  font-size: 25px;
 
 }
 
@@ -177,7 +177,7 @@ margin-bottom: 20px;
   max-width: 100%;
   text-align: center;
   padding: 10px;
-  font-size: 2vw;
+  font-size: 30px;
   margin-bottom: 30px;
 }
 
@@ -210,6 +210,6 @@ text-decoration: none;
 
 footer {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.3vw;
+  font-size: 15px;
 
 }

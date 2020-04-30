@@ -236,7 +236,7 @@ input[type=submit]:hover {
     max-width: 100%;
     text-align: center;
     padding: 10px;
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 30px;
 }
 
@@ -253,10 +253,10 @@ input[type=submit]:hover {
 }
 
 footer {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3vw;
-}
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
 
+}
 
 /* my profile in nav*/
 
@@ -378,6 +378,3 @@ body {
 .drop-down__item:hover:before {
     display: block;
 }
-
-
-/* slider */
