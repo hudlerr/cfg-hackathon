@@ -53,7 +53,7 @@ h2 {
     font-family: 'Montserrat', sans-serif;
     color: #373737;
     letter-spacing: -1px;
-    line-height: 1;
+    line-height: 1.5;
     top: 50px;
 }
 
@@ -62,7 +62,16 @@ h2 {
     width: 100%;
     position: relative;
     margin-bottom: 50px;
-    filter: grayscale(60%);
+    text-align: center;
+}
+
+.centeredtext{
+  position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ font-size: 6vw;
+
 }
 
 .toppicture img{
@@ -70,6 +79,8 @@ display: block;
 width: 100%;
 opacity: 0.5;
 position: relative;
+filter: grayscale(50%);
+
 }
 
 .tittle {
@@ -94,8 +105,9 @@ position: relative;
 }
 
 .intro {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 40px;
+    margin-top: -110px;
+    margin-bottom: 50px;
     color: rgba(0, 0, 0, 0.6);
     font-size: 17px;
     line-height: 1.4;
@@ -150,6 +162,7 @@ position: relative;
 
 .steps_container {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
@@ -170,10 +183,21 @@ position: relative;
 }
 
 .process {
-    margin: 10px;
+    margin-top: 30px;
+    margin-bottom:30px;
     font-size: 30px;
     font-family: 'Montserrat', sans-serif;
     font-weight: lighter;
+}
+
+.circleimg{
+  height: 175px;
+  flex-grow: 0;
+ flex-shrink: 0;
+ display: block;
+ margin-left: 8px;
+ width: 240px;
+ margin-right: 8px;
 }
 
 .socialmediabuttons {
@@ -211,4 +235,53 @@ position: relative;
 footer {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
+}
+
+
+@media only screen and (max-width: 950px) {
+
+    .steps_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+
+  }
+}
+
+@media only screen and (min-width: 951px) and (max-width:1200px){
+
+  .circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: lightblue;
+      opacity: 0.9;
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      position: relative;
+      padding: 10px;
+      margin: 5px;
+      font-size: 20px;
+
+  }
+
+  .circleimg{
+    height: 150px;
+    flex-grow: 0;
+   flex-shrink: 0;
+   display: block;
+   margin-left: 8px;
+   width: 150px;
+   margin-right: 8px;
+  }
+
+  .process {
+      margin-top: 30px;
+      margin-bottom:60px;
+      font-size: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: lighter;
+  }
 }
