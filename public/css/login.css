@@ -6,6 +6,7 @@ body {
     padding: 0px;
     margin: 0px;
     color: #373737;
+    text-align: center;
 }
 
 li,
@@ -17,16 +18,18 @@ a {
     text-align: center;
 }
 
+
 /*Nav bar*/
-.navbar{
+
+.navbar {
     min-height: 50px;
 }
-  
+
 .navbar-nav .nav-item .nav-link {
-      color:  #373737;
-      padding: 10px;
-      margin: 10px;
-      border: 1px #373737 ;
+    color: #373737;
+    padding: 10px;
+    margin: 10px;
+    border: 1px #373737;
 }
 
 .navbar-nav .nav-item.active .nav-link,
@@ -34,6 +37,7 @@ a {
     background-color: #CCD6EB;
     border-radius: 30px;
 }
+
 
 /*Form*/
 
@@ -46,8 +50,7 @@ a {
     margin-top: 50px;
     width: 900px;
     display: grid;
-    grid-template-columns: auto auto;  
-
+    grid-template-columns: auto auto;
 }
 
 .box {
@@ -101,7 +104,7 @@ input[type=password] {
 
 .button:hover {
     background: #F9A5A5;
-    text-shadow:0 1px 3px darken(30%);
+    text-shadow: 0 1px 3px darken(30%);
 }
 
 .welcome {
@@ -119,74 +122,75 @@ span.psw {
     padding-left: 150px;
 }
 
-.signup{
+.signup {
     text-align: center;
 }
 
-.link {color: blue;}
+.link {
+    color: blue;
+}
 
 
 /* first footer*/
 
-.graphic{
+.graphic {
     height: 30vw;
     margin: 0px;
-  }
-  
+}
+
 .socialmediabuttons {
     max-width: 100%;
     text-align: center;
     padding: 10px;
     font-size: 3vw;
 }
-  
-.fa  {
-  padding: 20px;
-  font-size: 60px;
-  width: 80px;
-  text-align: center;
-  text-decoration: none;
+
+.fa {
+    padding: 20px;
+    font-size: 60px;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
 }
-  
+
 .fa-facebook {
     color: #373737;
 }
-  
+
 .fa-instagram {
     color: #373737;
 }
-  
+
 .fa-twitter {
     color: #373737;
 }
-  
+
 .toggle {
     color: black;
 }
 
 
 /*Footer 2*/
+
 .footer {
-    background-color:transparent;
+    background-color: transparent;
     text-align: center;
     padding: 10px;
     margin: 10px;
 }
 
 @media screen and (max-width: 900px) {
-    body{
+    body {
         background-color: #00203FFF;
     }
-    .bigbox{
+    .bigbox {
         grid-template-columns: auto;
         width: 455px;
         justify-content: center;
         background: white;
         background: linear-gradient(0deg, #CCD6EB 0%, white 50%);
     }
-
     .imgn {
         padding-left: 40px;
     }
 }
-
