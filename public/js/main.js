@@ -93,7 +93,7 @@ function showTaskTable(err, data) {
                     } else {
                         statusbutton = '<button type="submit" class="btn btn-success btn-sm" style="line-height: 0.9;" disabled>' + task.status + '</button>';
                     }
-                    outlistitem.innerHTML = '<li style="font-size: 12px;">"' + task.titlecontent + '" picked up by <mark>' + task.ownername + '</mark> - ' + task.ownernumber + ' - <form name="completeRequest" action="/complete-request" method="post" style="display: inline;"> <input type="hidden" name="taskid" value="' + task.taskid + '"/> ' + statusbutton + '</form> </li></br>';
+                    outlistitem.innerHTML = '<li style="font-size: 12px;">"' + task.titlecontent + '" picked up by <mark>' + task.repliedtousername + '</mark> - ' + task.repliedtousernumber + ' <br> <form name="completeRequest" action="/complete-request" method="post" style="display: inline;"> <input type="hidden" name="taskid" value="' + task.taskid + '"/> ' + statusbutton + '</form> </li></br>';
                 }
                 requesteddiv.append(outlistitem);
             }
