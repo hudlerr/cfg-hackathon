@@ -6,6 +6,7 @@ body {
     padding: 0px;
     margin: 0px;
     color: #373737;
+    text-align: center;
 }
 
 li,
@@ -14,18 +15,21 @@ a {
     font-size: 16px;
     color: #373737;
     text-decoration: none;
+    text-align: center;
 }
 
+
 /*Nav bar*/
-.navbar{
+
+.navbar {
     min-height: 50px;
 }
-  
+
 .navbar-nav .nav-item .nav-link {
-      color:  #373737;
-      padding: 10px;
-      margin: 10px;
-      border: 1px #373737 ;
+    color: #373737;
+    padding: 10px;
+    margin: 10px;
+    border: 1px #373737;
 }
 
 .navbar-nav .nav-item.active .nav-link,
@@ -34,57 +38,77 @@ a {
     border-radius: 30px;
 }
 
+
 /*Form*/
 
-form {
-    background-color: #DBE4EE;
+.bigbox {
+    background: white;
+    background: linear-gradient(90deg, white 45%, #CCD6EB 100%);
     border-radius: 6px;
     box-shadow: 0 0 1em #222;
-    padding: 1em 1em 1em;
-    max-width: 540px;
-    margin: 30px auto 30px;
+    margin: auto;
+    margin-top: 50px;
+    width: 900px;
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
-.container {
-    padding: 16px;
-    justify-content: center;
+.box {
+    padding: 10px;
+}
+
+.imgn {
+    width: 400px;
+    height: 450px;
+}
+
+#login {
+    margin: 0 30px
 }
 
 input[type=text] {
     width: 400px;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 10px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
 input[type=password] {
-    width: 311px;
+    width: 400px;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 10px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
-button {
-   background-color: #81A4CD;
-   color: white;
-   padding: 14px 20px;
-   margin: 8px 0;
-   border: none;
-   cursor: pointer;
-   width: 80px;
+.button {
+    background: #81A4CD;
+    box-shadow: 0 3px 0 0 darken(10%);
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 1.5em;
+    width: 400px;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    outline: none;
+    padding: 10px;
+    text-shadow: 0 1px #F9A5A5;
 }
 
-button:hover {
-    opacity: 0.8;
+.button:hover {
+    background: #F9A5A5;
+    text-shadow: 0 1px 3px darken(30%);
 }
 
 .welcome {
     text-align: center;
-    margin: 24px 0 12px 0;
 }
 
 .logimg {
@@ -95,59 +119,78 @@ button:hover {
 span.psw {
     float: center;
     padding-top: 16px;
-    padding-left: 220px;
+    padding-left: 150px;
 }
 
-.signup{
+.signup {
     text-align: center;
 }
 
-.link {color: blue;}
+.link {
+    color: blue;
+}
 
 
 /* first footer*/
 
-.graphic{
+.graphic {
     height: 30vw;
     margin: 0px;
-  }
-  
+}
+
 .socialmediabuttons {
     max-width: 100%;
     text-align: center;
     padding: 10px;
     font-size: 3vw;
 }
-  
-.fa  {
-  padding: 20px;
-  font-size: 60px;
-  width: 80px;
-  text-align: center;
-  text-decoration: none;
+
+.fa {
+    padding: 20px;
+    font-size: 60px;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
 }
-  
+
 .fa-facebook {
     color: #373737;
 }
-  
+
 .fa-instagram {
     color: #373737;
 }
-  
+
 .fa-twitter {
     color: #373737;
 }
-  
+
 .toggle {
     color: black;
 }
 
 
 /*Footer 2*/
+
 .footer {
-    background-color:transparent;
+    background-color: transparent;
     text-align: center;
     padding: 10px;
     margin: 10px;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        background-color: #00203FFF;
+    }
+    .bigbox {
+        grid-template-columns: auto;
+        width: 455px;
+        justify-content: center;
+        background: white;
+        background: linear-gradient(0deg, #CCD6EB 0%, white 50%);
+    }
+    .imgn {
+        padding-left: 40px;
+    }
 }
