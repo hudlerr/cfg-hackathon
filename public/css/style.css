@@ -65,10 +65,11 @@ h2 {
     filter: grayscale(60%);
 }
 
-.toppicture img {
-    display: block;
-    width: 100%;
-    position: relative;
+.toppicture img{
+display: block;
+width: 100%;
+opacity: 0.5;
+position: relative;
 }
 
 .tittle {

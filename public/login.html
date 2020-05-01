@@ -3,62 +3,64 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Close Hands</title>
+    <title>Neighbourly</title>
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="../app.js"></script>
+    <script src="js/utilities.js"></script>
+    <script src="js/login.js"></script>
 </head>
 
 <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #DBE4EE;">
         <a class="navbar-brand" href="/">
-            <img src="images/closehands.png" width="70px" height="70px" alt="">
+          <img src="images/closehands.png" width="70px" height="70px" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/create-user">Create account</a>
-                </li>
-            </ul>
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/create-user">Create account</a>
+            </li>
+          </ul>
         </div>
 </header>
 
 <body>
-    <div class="welcome">
-        <h1>Welcome Back!</h1>
-        <img class="logimg" src="images/login.png" alt="img">
-        <h2>Login</h2>
+  <div class="bigbox">
+    <div class="box">
+      <img class="imgn" src="images/29815.jpg" alt="Neighbors"></a>
     </div>
-    <div>
-        <div class="container">
-            <form class="login-form" action="/authoriseuser" method="post">
-                <label for="uname">Username</label>
-                <input type="text" placeholder="Email Address" name="username" required>
-                <br>
-                <label for="psw">Password</label>
-                <input type="password" placeholder="Password" name="password" required>
-                <br>
-                <button type="submit">Login</button>
-                <br>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember">Remember me
-                </label>
-                <span class="psw"><a class="link" href="#">Forgot password?</a></span>
-            </form>
-        </div>
-        <br>
-        <div class="signup">
-            <span>Don't have an account yet? <a class="link" href="/create-user">Sign Up</a></span>
-        </div>
+    <div class="box">
+        <div class="welcome">
+            <h1>Welcome Back!</h1>
+            <img class="logimg" src="images/login.png" alt="img">
+            <h2>Login</h2>
+        </div> 
+        <form id="login" action="#" method="#">
+          <div id="main">
+            <input id="username" type="text" placeholder="E-mail" name="uname" required>
+            <br>
+            <input id="pass" type="password" placeholder="Password" name="psw" required>
+            <button class="button" type="submit">Login</button>
+            <br>
+          <!--<label>
+              <input type="checkbox" checked="checked" name="remember">Remember me
+            </label>
+            <span class="psw"><a class="link" href="#">Forgot password?</a></span>-->
+            <div class="signup">
+              <span>Don't have an account yet? <a class="link" href="create-user.html">Sign Up</a></span>
+            </div>
+          </div>
+        </form>
     </div>
+  </div>
 </body>
 
 <footer>
@@ -77,5 +79,4 @@
 <footer style="font-size: 15px;">
     MADE WITH &#x1F49B;
 </footer>
-
 </html>
