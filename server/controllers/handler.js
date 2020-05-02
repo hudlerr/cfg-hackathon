@@ -129,11 +129,17 @@ router.post('/authoriseuser', function(request, response) {
     const username = request.body.username;
     const password = request.body.password;
     console.log("/authorise " + username + password);
-    dbConnection.query('SELECT * FROM users WHERE email = $1 and password = $2', [username, password],
-        function(error, results, fields) {
-            console.log(results.rows);
-            var formattedPostcode = (results.rows[0].postcode).toUpperCase().split(" ").join("");
+    dbConnection.query(`SELECT * FROM users WHERE email = $1 and password = $2`, [username, password],
+        //dbConnection.query(`SELECT * FROM users WHERE email = '${username}' and password = '${password}'`, // [username, password],
+        function(error, results) {
+            //(error, results) => {
+            if (error) {
+                console.log("error: ", error);
+                return;
+            }
+
             if (results.rows.length > 0) {
+                var formattedPostcode = (results.rows[0].postcode).toUpperCase().split(" ").join("");
                 request.session.loggedin = true;
                 request.session.loggedinUser = {
                     id: results.rows[0].id,
