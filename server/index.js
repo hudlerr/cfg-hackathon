@@ -4,3 +4,8 @@ const port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`Server has started on ${port}!!`);
 });
+
+app.on('error', function(ex) {
+    console.log("handled error");
+    console.log(ex);
+});
