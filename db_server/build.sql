@@ -15,7 +15,9 @@ CREATE TABLE users
 );
 
 INSERT INTO users (fullname, email, password, phonenumber, postcode) VALUES
-('Huda', 'test@hotmail.com', 'test', 999, 'LE52AA');
+('Huda', 'test@hotmail.com', 'test', 07963527356, 'LE52AA'),
+('Jane Davis', 'j@hotmail.com', 'test', 07963426738, 'LE52AA'),
+('Adam Food', 'a@hotmail.com', 'test', 07963425364, 'LE52AA');
 
 --table to store tasks
 
@@ -35,7 +37,10 @@ CREATE TABLE tasks
     status varchar(100)
 );
 
-INSERT INTO tasks (ownerId, ownerNumber, ownerName, neighbourhoodId, titleContent, descriptionContent)  VALUES
-( 01, '07963527356', 'Huda', 'LE52AA', 'Walk my cat', 'Just around the block');
+INSERT INTO tasks (ownerId, ownerNumber, ownerName, neighbourhoodId, titleContent, descriptionContent, repliedtoUserId, repliedtoUserNumber, repliedtoUsername, created_date, status)  VALUES
+( 02, '07963426738', 'Jane Davis', 'LE52AA', 'Pick up medicine', 'From local pharmacy', 03, '07963425364', 'Adam Food', '2020-04-29', 'In Progress'),
+( 03, '07963425364', 'Adam Food', 'LE52AA', 'Collect shopping', 'Already ordered and paid for :)', 01, '07963527356', 'Huda', '2020-04-26', 'In Progress'),
+( 01, '07963527356', 'Huda', 'LE52AA', 'Pick up shopping', 'Unable to leave home - paid for', 02, '07963426738', 'Jane Davis', '2020-04-21', 'In Progress'),
+( 01, '07963527356', 'Huda', 'LE52AA', 'Walk dog', 'Just around the corner', 03, '07963425364', 'Adam Food', '2020-04-29', 'Completed');
 
 COMMIT;
