@@ -1,5 +1,18 @@
-## Close Hands
+## Neighbourly
 Lets be helpful neighbours again!
+
+ - - - -
+ ## Judges:
+ We've been unable to get heroku (or other hosting platforms) working with our website so i'll leave instructions to setup below:
+ 1. install npm and postgresql (https://github.com/coding-wiki/learn-sql/blob/master/postgresql/setup.md)
+ 2. `git clone https://github.com/hudlerr/cfg-hackathon.git && cd cfg-hackathon`
+ 3. `npm install`
+ 4. `cd db_server`
+ 4. `psql postgres://huda:super@localhost:5432/closehands` 
+ 5. `\include build.sql`
+ 6. `\q`
+ 7. `npm run dev`
+ 8.  Navigate to http://localhost:8000 and login as user - test@hotmail.com with password - test to see a sample user dashboard, or create your own! 
 
  - - - -
  
