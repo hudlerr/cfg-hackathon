@@ -8,12 +8,15 @@ Lets be helpful neighbours again!
  2. `git clone https://github.com/hudlerr/cfg-hackathon.git && cd cfg-hackathon`
  3. `npm install`
  4. `cd db_server`
- 4. `psql postgres://huda:super@localhost:5432/closehands` 
- 5. `\include build.sql`
- 6. `\q`
- 7. `npm run dev`
- 8.  Navigate to http://localhost:8000 and login as user - test@hotmail.com with password - test to see a sample user dashboard, or create your own! 
-
+ 5. `psql`
+ 6. `CREATE DATABASE closehands`
+ 7. `CREATE USER huda WITH SUPERUSER PASSWORD 'super';`
+ 8. `ALTER DATABASE closehands OWNER TO huda;`
+ 9. `\include build.sql`
+ 10. `\q`
+ 11. `npm run dev`
+ 12.  Navigate to http://localhost:8000 and login as user - test@hotmail.com with password - test to see a sample user dashboard, or create your own! 
+ *  `psql postgres://huda:super@localhost:5432/closehands` - to connect to the db if you loose connection at any point (from cmd)
  - - - -
  
 ### Tools:
