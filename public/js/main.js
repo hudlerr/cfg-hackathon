@@ -63,10 +63,11 @@ function showTaskTable(err, data) {
                 value = 'I can help!';
                 var button = ' <form name="buttonForm" action="/accept-request" method="post"> <input type="hidden" name="taskid" value="' + task.taskid + '"/> <button type="submit" class="btn" onclick="">' + value + '</button></form>';
                 status.innerHTML = button;
-            } else {
-                //display user name and number - depending on who is logged in :( 
-                //TODO: fit complete button into here?
+            } else if (task.status === 'In Progress') {
+                //display user name and number - depending on who is logged in 
                 status.innerHTML = 'Picked up by ' + task.repliedtousername;
+            } else {
+                status.innerHTML = 'Completed by ' + task.repliedtousername + ' :)';
             }
             row.appendChild(status);
             body.appendChild(row)

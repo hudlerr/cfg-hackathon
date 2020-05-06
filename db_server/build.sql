@@ -38,7 +38,6 @@ CREATE TABLE tasks
 );
 
 INSERT INTO tasks (ownerId, ownerNumber, ownerName, neighbourhoodId, titleContent, descriptionContent, repliedtoUserId, repliedtoUserNumber, repliedtoUsername, created_date, status)  VALUES
-( 02, '07963426738', 'Jane Davis', 'LE52AA', 'Pick up medicine', 'From local pharmacy', 03, '07963425364', 'Adam Food', '2020-04-29', 'In Progress'),
 ( 03, '07963425364', 'Adam Food', 'LE52AA', 'Collect shopping', 'Already ordered and paid for :)', 01, '07963527356', 'Huda', '2020-04-26', 'In Progress'),
 ( 01, '07963527356', 'Huda', 'LE52AA', 'Pick up shopping', 'Unable to leave home - paid for', 02, '07963426738', 'Jane Davis', '2020-04-21', 'In Progress'),
 ( 01, '07963527356', 'Huda', 'LE52AA', 'Walk dog', 'Just around the corner', 03, '07963425364', 'Adam Food', '2020-04-29', 'Completed');
